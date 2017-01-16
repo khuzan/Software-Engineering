@@ -9,45 +9,51 @@
   <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
 
-  
+
   <link rel="stylesheet" href="../css/animate.css">
   <script src="../js/wow.min.js"></script>
   <script>
     new WOW().init();
   </script>
 </head>
-  
+
 <body>
+<br>
+&nbsp&nbsp
 
   <div class="container">
+
 <form class="login" method="POST" action="functions/loginfunction.php">
     <div class="form-group">
-      <label for="text">Username:</label>
-      <input type="text" class="form-control" id="email" placeholder="Enter username" name="username" required>
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
-    </div>
-   
-    <button type="submit" name="submit" class="btn btn-default" style="width:30%;" ><strong>Submit</strong></button>
 
-    <button onclick="goBack()" style="width:30%; margin-left: 39%; height: 35px;
-    padding:3px; border-radius:7px; background-color:#FFFFFF;"><strong><< Back</strong></button>
+      <div class="inner-addon left-addon">
+    <i class="glyphicon glyphicon-user"></i>
+    <input type="text" class="form-control" placeholder="Username" name="username"  required/>
+      </div>
+    </div>
+
+    <div class="form-group">
+
+    <div class="inner-addon left-addon">
+    <i class="glyphicon glyphicon-lock"></i>
+    <input type="password" class="form-control" placeholder="Password" name="password" required/>
+    </div>
+    <br>
+    <button type="submit" name="submit" class="btn btn-default" style="margin-right:34%;"><strong>Submit</strong></button>
+
+    <button onclick="goBack()" class="btn btn-default"><i class="glyphicon glyphicon-circle-arrow-left"></i><strong> Back</strong></button>
     <div class="error">
       <?php
       if(isset($_GET['error'])==1){
-      echo '<p>Invalid Username or Password!<p/>';
+      echo '<p class="error-style">Invalid Username or Password!<p/>';
       }
       ?>
+      </div>
       </div>
   </form>
 
 
-   
-  </div>
 
-  
 </body>
 
 </html>
@@ -60,9 +66,15 @@ body{
 /*ERROR*/
 .error{
   position: absolute;
-  bottom: 10px;
+  bottom: -5px;
+  margin-left: 10px;
   font-weight: bold;
 }
+.error-style{
+
+  color: red;
+}
+
 .logo{
   margin: 0 auto;
   width: 50px;
@@ -70,30 +82,21 @@ body{
   top: 23px;
   left: 1100px;
 }
-.head{
-  padding-top: 6px;
-}
-.head header{
-  width: 1365px;
-  height: 50px;
-  margin: 0 auto;
-  background-color: white;
-}
+
 .container{
   margin: 0 auto;
-  width: 35%;
-  height: 350px;
-  border: 2px solid white;
+  width: 20%;
+  border: solid 2px white;
+  height: 215px;
   position: relative;
-  top: 80px;
-  animation-name: tubig; 
-  animation-duration: 1s; 
-  
-}
+  top: 150px;
+  animation-name: push;
+  animation-duration: 1s;
 
-@keyframes tubig{
-  0% {width: 550px; height: 250px;}
-  100%{width: 35%; height: 350px;}
+}
+@keyframes push{
+  0% {width: 20%; height: 180px;}
+  100%{width: 20%; height: 215px;}
 }
 
 
@@ -104,10 +107,29 @@ label{
   font-size: 20px;
 }
 .login{
-  margin-top: 80px;
+  margin-top: 35px;
 
 }
+/*CSS GLYPHICON*/
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
 
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
 
 
 </style>

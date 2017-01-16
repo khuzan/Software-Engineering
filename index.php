@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Software Engneering</title>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -43,7 +44,7 @@
   <div class="card card-block">
   <hr style="width:90%; margin:5 auto;">
 
-   <p class="col-md-12" align="left" style="width:99%;"><strong style="font-size:18px;">Borrowing System</strong> is program to be used in the Digital Laboratory in order to monitor and manipulate equipment. The said system can only be used by the admin-the assigned instructor for the Digital Lab.
+   <p class="col-md-12" align="left" style="width:99%; color: #333333; font-size:18px;"><strong style="font-size:20px;">Borrowing System</strong> is program to be used in the Digital Laboratory in order to monitor and manipulate equipment. The said system can only be used by the admin-the assigned instructor for the Digital Lab.
   </p>
   </div>
 </div>
