@@ -1,4 +1,4 @@
-<?php 
+<?php
 	function connect(){
 		$db = new PDO("mysql:host=localhost;dbname=borrowing_system","root","");
 		return $db;
@@ -19,16 +19,16 @@
 			false;
 		}
 	}
-  	}	
+  	}
 
   	function getinfo(){
   	$db = connect();
-	$sth = $db->prepare("Select * From slip order by id");
+	$sth = $db->prepare("Select * From borrower order by id");
 	$sth->execute();
 	$results = $sth->fetchAll(PDO::FETCH_OBJ);
 	return $results;
   	}
 
-	
-	
+
+
  ?>

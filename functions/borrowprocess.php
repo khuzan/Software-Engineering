@@ -9,18 +9,30 @@ if (isset($_POST['borrow'])) {
 	$name = $_POST['name'];
 	$course = $_POST['course'];
 	$subject = $_POST['subj'];
-	$desc = $_POST['descr'];
+	$desc = "";
 	$date = $_POST['det'];
 	$rec = $_POST['checked'];
-	
 
-	$query = $db->prepare("INSERT INTO slip SET
-						 student_id = :id, 
+	if(isset($_POST['analog'])){
+		$desc .= $_POST['analog']."<br>";
+	}
+	if(isset($_POST['power'])){
+		$desc .= $_POST['power']."<br>";
+	}
+	if (isset($_POST['camsco'])) {
+		$desc .= $_POST['camsco']."<br>";
+	}
+	if (isset($_POST['antenna'])) {
+		$desc .= $_POST['antenna'];
+	}
+
+	$query = $db->prepare("INSERT INTO borrower SET
+						 student_id = :id,
 						 name = :name,
 						 course = :course,
 						 subject = :subj,
 						 descr = :descr,
-						 det = :det,
+						 dates = :det,
 						 received = :checked ");
 	$execute_query = [':id' => $id,
 						':name' => $name,
