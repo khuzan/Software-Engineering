@@ -150,12 +150,9 @@
 						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-						<button type="submit" name="borrow" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span> PROCEED</button>
+						<button type="submit" title="submit" name="borrow" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span> SUBMIT</button>
 				</div>
 	</div>
-
-
-
 
 </form>
 			</div>
@@ -164,7 +161,8 @@
 	<div class="btn-group btn-group-sm" role="group" aria-label="Default button group">
 			<button onclick="goBack()" class="btn btn-default" ><i class="glyphicon glyphicon-circle-arrow-left"></i> BACK</button>
 			<a  class="btn btn-default" href="borrower.php"	> <i class="glyphicon glyphicon-eye-open"></i> VIEW LIST</a>
-			<a  class="btn btn-default	active"	href="page.php" href="page.php"	><i class="glyphicon glyphicon-plus-sign"></i> BORROW</a>
+			<a  class="btn btn-default" href="items.php"	><i class="glyphicon glyphicon-list"></i> ITEMS</a>
+			<a  class="btn btn-default	active"	href="page.php"	><i class="glyphicon glyphicon-plus-sign"></i> BORROW</a>
 	 </div>
 
 </div>
@@ -189,7 +187,7 @@
 	}
 	#second-div{
 		background-color: #e2e3e4;
-		margin-top: 40px;
+		margin-top: 60px;
 		border: solid 1px black;
 		height: 300px;
 		width: 97%;

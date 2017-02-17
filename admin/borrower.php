@@ -4,14 +4,21 @@
 	include "../functions/function.php";
 	$db = connect();
 
+
+	if(isset($_GET['action']) && $_GET['action']=='delete'){
+  	$db = connect();
+  	$sth = $db->prepare("DELETE FROM borrower WHERE id = :id");
+  	$sth->bindValue('id',$_GET['id']);
+  	$sth->execute();
+  }
  ?>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
-  <script src="../bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js"></script>
-  <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<script src="../bootstrap-3.3.7-dist/js/jquery.js"></script>
+	<script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 
 
   <link rel="stylesheet" href="../css/animate.css">
@@ -63,7 +70,7 @@
 					<th >NAME</th>
 					<th >COURSE</th>
 					<th >SUBJECT</th>
-					<th >DESCRIPTION</th>
+					<!-- <th >DESCRIPTION</th> -->
 					<th >DATE OF LEND</th>
 					<th >CHECKED BY</th>
 					<th >OPTION</th>
@@ -76,11 +83,16 @@
 					<td ><?php echo $g->name; ?></td>
 					<td ><?php echo $g->course; ?></td>
 					<td ><?php echo $g->subject; ?></td>
-					<td ><?php echo $g->descr; ?></td>
+					<!-- <td ><?php echo $g->descr; ?></td> -->
 					<td ><?php echo $g->dates; ?></td>
 					<td ><?php echo $g->received; ?></td>
-					<td >
-						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">VIEW</button>
+					<td>
+						<button title="View items" data-id ="<?php echo $g->id;?>" name="view_data" class="btn btn-info btn-md view glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#myModal"></button>
+						<button title="Update" name="update" class="btn btn-success btn-md view glyphicon glyphicon-edit" data-toggle="modal" data-target="#myModal"></button>
+					<a href="borrower.php?id=<?php echo $g->id;?>
+						&action=delete" onclick="return confirm('Are you sure?')"
+						<button name="delete" title="Delete item" class="btn btn-danger btn-md  glyphicon glyphicon-trash"></button>
+					</a>
 					</td>
 				</tr>
 				<?php endforeach;?>
@@ -93,8 +105,10 @@
 
 	<div class="btn-group btn-group-sm" role="group" aria-label="Default button group">
 			<button onclick="goBack()" class="btn btn-default" ><i class="glyphicon glyphicon-circle-arrow-left"></i> BACK</button>
-			<a  class="btn btn-default	active" href="borrower.php"	><i class="glyphicon glyphicon-eye-open"></i> VIEW LIST</a>
-			<a  class="btn btn-default"	href="page.php" href="page.php"	><i class="glyphicon glyphicon-plus-sign"></i> BORROW</a>
+			<a  class="btn btn-default	active" href="borrower.php" id="modal"	><i class="glyphicon glyphicon-eye-open" ></i> VIEW LIST</a>
+			<a  class="btn btn-default"	href="items.php"><i class="glyphicon glyphicon-list"></i> ITEMS</a>
+			<a  class="btn btn-default"	href="page.php"><i class="glyphicon glyphicon-plus-sign"></i> BORROW</a>
+
 	 </div>
 
 </div>
@@ -111,44 +125,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title" align="center">Borrower's Details</h4>
         </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-					<table class="table">
-    <tbody>
-				<?php foreach (getinfo() as $g):?>
-        <tr>
-          <th>STUDENT ID#</th>
-            <td ><?php echo $g->student_id; ?></td>
-        </tr>
-        <tr>
-          <th>NAME:</th>
-            <td ><?php echo $g->name; ?></td>
-        </tr>
-				<tr>
-					<th>COURSE:</th>
-					<td ><?php echo $g->course; ?></td>
-				</tr>
-				<tr>
-					<th>SUBJECT</th>
-					<td ><?php echo $g->subject; ?></td>
-				</tr>
-				<tr>
-					<th>ITEM DESCRIPTION</th>
-					<td ><?php echo $g->descr; ?></td>
-				</tr>
-				<tr>
-					<th>DATE OF LEND</th>
-					<td ><?php echo $g->dates; ?></td>
-				</tr>
-				<tr>
-					<th>CHECKED BY:</th>
-					<td ><?php echo $g->received; ?></td>
-				</tr>
-			<?php endforeach;?>
-    </tbody>
-</table>
+        <div class="modal-body" id="modalview">
+          <p id = "test" align="center">Some text in the modal.</p>
 
         </div>
         <div class="modal-footer">
@@ -217,7 +197,7 @@
     0%  {width:100px;}
     100% {width: 300px;}
   }
-	/*aaaaaaaaaaaaaaaaaaaaa*/
+	/*table-scroll*/
 	.table{
 		position: relative;
 		width: 104%;
@@ -237,13 +217,37 @@
 	.table-scroll thead > tr > th {
 	    border: none;
 	}
+	/*END table-scroll*/
+
+
 </style>
 
 <!-- JS -->
+
+
 <script>
 function goBack() {
     window.history.back();
 }
+// $(document).on('click', '.view', function(){
+//           var id = $(this).data("id");
+// 					 $('.modal-body #test').val(id);
+// 				});
+// modal view script
+$(document).on('click', '.view', function(){
+           var id = $(this).data("id");
 
-
+           if(id != '')
+           {
+                $.ajax({
+                     url:"../functions/fetch_process.php",
+                     method:"POST",
+                     data:{M_view:id},
+                     success:function(data){
+                          $('#modalview').html(data);
+                          $('#myModal').modal('show');
+                     }
+                });
+           }
+      });
 </script>
