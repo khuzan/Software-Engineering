@@ -39,6 +39,18 @@ if(isset($_POST["M_view"])){
                    <td width="70%">'.$res->dates.'</td>
               </tr>
               <tr>
+                  <td width="30%"><label>STATUS</label></td>
+                  <td width="70%">'.$res->status.'</td>
+             </tr>
+             <tr>
+                 <td width="30%"><label>DATE RETURNED</label></td>
+                 <td width="70%">'.$res->datereturn.'</td>
+            </tr>
+            <tr>
+                <td width="30%"><label>COMMENTS</label></td>
+                <td width="70%">'.$res->comments.'</td>
+           </tr>
+              <tr>
                    <td width="30%"><label>CHECKED BY</label></td>
                    <td width="70%">'.$res->received.'</td>
               </tr>

@@ -88,7 +88,7 @@
 					<td ><?php echo $g->received; ?></td>
 					<td>
 						<button title="View items" data-id ="<?php echo $g->id;?>" name="view_data" class="btn btn-info btn-md view glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#myModal"></button>
-						<button title="Update" name="update" class="btn btn-success btn-md view glyphicon glyphicon-edit" data-toggle="modal" data-target="#myModal"></button>
+						<button title="Update" name="update" data-id="<?php echo $g->id;?>" class="btn btn-success btn-md update glyphicon glyphicon-edit" data-toggle="modal" data-target="#updateModal"></button>
 					<a href="borrower.php?id=<?php echo $g->id;?>
 						&action=delete" onclick="return confirm('Are you sure?')"
 						<button name="delete" title="Delete item" class="btn btn-danger btn-md  glyphicon glyphicon-trash"></button>
@@ -118,8 +118,9 @@
 </div>
 	</div>
 </body>
+<!-- VIEW MODAL  -->
 <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog ">
 
       <!-- Modal content-->
       <div class="modal-content">
@@ -138,6 +139,33 @@
 
     </div>
   </div>
+
+
+	<!-- UPDATE MODAL -->
+	<div class="modal fade" id="updateModal" role="dialog">
+	    <div class="modal-dialog modal-lg">
+				<form class="" action="../functions/update.php" method="post">
+
+
+	      <!-- Modal content-->
+	      <div class="modal-content form-group" >
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title" align="center">Update Details</h4>
+	        </div>
+	        <div class="modal-body" id="updatemodalview">
+	          <p id = "test" align="center">Some text in the modal.</p>
+						HELLO
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary" name="update">Save Changes</button>
+					</form>
+	        </div>
+	      </div>
+
+	    </div>
+	  </div>
 
 </div>
 </html>
@@ -250,4 +278,23 @@ $(document).on('click', '.view', function(){
                 });
            }
       });
+
+
+	//modal update script
+	$(document).on('click', '.update', function(){
+	           var id = $(this).data("id");
+
+	           if(id != '')
+	           {
+	                $.ajax({
+	                     url:"../functions/update_process.php",
+	                     method:"POST",
+	                     data:{update:id},
+	                     success:function(data){
+	                          $('#updatemodalview').html(data);
+	                          $('#updateModal').modal('show');
+	                     }
+	                });
+	           }
+	      });
 </script>

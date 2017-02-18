@@ -2,52 +2,43 @@
 session_start();
 include "function.php";
 $db = connect();
-if (isset($_POST['save'])) {
+if (isset($_POST['update'])) {
 
 
 	$id = $_POST['id'];
 	$name = $_POST['name'];
 	$course = $_POST['course'];
 	$subject = $_POST['subj'];
-	$desc = "";
-	$date = $_POST['det'];
-	$rec = $_POST['checked'];
+	$date = $_POST['detoflend'];
+	$status = $_POST['status'];
+	$datereturn = $_POST['datereturn'];
+	$comments = $_POST['comment'];
 
-	if(isset($_POST['analog'])){
-		$desc .= $_POST['analog']."<br>";
-	}
-	if(isset($_POST['power'])){
-		$desc .= $_POST['power']."<br>";
-	}
-	if (isset($_POST['camsco'])) {
-		$desc .= $_POST['camsco']."<br>";
-	}
-	if (isset($_POST['antenna'])) {
-		$desc .= $_POST['antenna'];
-	}
+
 
 	$query = $db->prepare("UPDATE borrower SET
-						 student_id = :id,
 						 name = :name,
 						 course = :course,
 						 subject = :subj,
-						 descr = :descr,
-						 dates = :det,
-						 received = :checked
+						 dates = :detoflend,
+						 status = :status,
+						 datereturn = :datereturn,
+						 comments = :comments
              WHERE id = :id ");
 
-  $query->bindValue('student_id',$id);
+  $query->bindValue('id',$id);
   $query->bindValue('name',$name);
   $query->bindValue('course',$course);
-  $query->bindValue('subject',$subject);
-  $query->bindValue('descr',$desc);
-  $query->bindValue('dates',$date);
-  $query->bindValue('received',$rec);
+  $query->bindValue('subj',$subject);
+  $query->bindValue('detoflend',$date);
+	$query->bindValue('status',$status);
+	$query->bindValue('datereturn',$datereturn);
+	$query->bindValue('comments',$comments);
 
 
 
 	if ($query->execute()) {
-    echo "success!";
+  	header('Location:../admin/borrower.php');
 
 	}
 	else{

@@ -23,12 +23,20 @@
 
   	function getinfo(){
   	$db = connect();
-	$sth = $db->prepare("Select * From borrower order by id");
+	$sth = $db->prepare("SELECT * From borrower order by id");
 	$sth->execute();
 	$results = $sth->fetchAll(PDO::FETCH_OBJ);
 	return $results;
   	}
 
+		function getinfobyid($id){
+		$db = connect();
+	$sth = $db->prepare("SELECT * From borrower WHERE id = :id");
+	$sth->bindValue('id',$id);
+	$sth->execute();
+	$results = $sth->fetch(PDO::FETCH_OBJ);
+	return $results;
+		}
 
 
  ?>
