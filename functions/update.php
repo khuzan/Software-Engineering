@@ -38,7 +38,7 @@ if (isset($_POST['update'])) {
 
 
 	if ($query->execute()) {
-  	header('Location:../admin/borrower.php');
+  	header('Location:../todo_list.php');
 
 	}
 	else{

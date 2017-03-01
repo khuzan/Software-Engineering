@@ -10,7 +10,8 @@ if (isset($_POST['borrow'])) {
 	$course = $_POST['course'];
 	$subject = $_POST['subj'];
 	$desc = "";
-	$date = $_POST['det'];
+	$date = date('y/m/d');
+
 	$rec = $_POST['checked'];
 
 	if(isset($_POST['analog'])){
@@ -43,7 +44,7 @@ if (isset($_POST['borrow'])) {
 						':checked' => $rec];
 
 	if ($query->execute($execute_query)) {
-		header('Location:../admin/borrower.php');
+		header('Location:../todo_list.php');
 	}
 	else{
 		echo "SHINESS";

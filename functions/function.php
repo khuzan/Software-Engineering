@@ -28,6 +28,14 @@
 	$results = $sth->fetchAll(PDO::FETCH_OBJ);
 	return $results;
   	}
+		function getitems(){
+  	$db = connect();
+	$sth = $db->prepare("SELECT * From items order by items_id");
+	$sth->execute();
+	$results = $sth->fetchAll(PDO::FETCH_OBJ);
+	return $results;
+  	}
+
 
 		function getinfobyid($id){
 		$db = connect();

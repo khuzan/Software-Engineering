@@ -28,8 +28,15 @@ if(isset($_POST["update"])){
               <td width="70%">
               <select class="form-control" name="course">
                 <option>'.$res->course.'</option>
-                <option value="engr">ENGR</option>
-                <option value="bsit">BSIT</option>
+                <option value="BS Information Technology - I">BS Information Technology - I</option>
+                <option value="BS Information Technology - II">BS Information Technology - II</option>
+                <option value="BS Information Technology - III">BS Information Technology - III</option>
+                <option value="BS Information Technology - IV">BS Information Technology - IV</option>
+                <option value="BS Engineering - I">BS Engineering - I</option>
+                <option value="BS Engineering - II">BS Engineering - II</option>
+                <option value="BS Engineering - III">BS Engineering - III</option>
+                <option value="BS Engineering - IV">BS Engineering - IV</option>
+                <option value="BS Engineering - V">BS Engineering - V</option>
               </select></td>
          </tr>
           <tr>
