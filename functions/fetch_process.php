@@ -13,7 +13,7 @@ if(isset($_POST["M_view"])){
 
 
     $output .= '
-    <div class="table-responsive">
+    <div class="table-responsive" id="div_print">
          <table class="table table-bordered">';
 
 

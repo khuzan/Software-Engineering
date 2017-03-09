@@ -26,6 +26,11 @@ if (isset($_POST['borrow'])) {
 	if (isset($_POST['antenna'])) {
 		$desc .= $_POST['antenna'];
 	}
+	if(preg_match("/\d/",$name) || preg_match("/W/", $name))
+		   {
+ 			header("Location:../todo_list.php?error");
+		}
+	else{
 
 	$query = $db->prepare("INSERT INTO borrower SET
 						 student_id = :id,
@@ -49,7 +54,7 @@ if (isset($_POST['borrow'])) {
 	else{
 		echo "SHINESS";
 	}
-
+}
 }
 
 

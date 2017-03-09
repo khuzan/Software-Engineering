@@ -5,13 +5,6 @@
 	$db = connect();
 
 
-	if(isset($_GET['action']) && $_GET['action']=='delete'){
-  	$db = connect();
-  	$sth = $db->prepare("DELETE FROM borrower WHERE id = :id");
-  	$sth->bindValue('id',$_GET['id']);
-  	$sth->execute();
-  }
-
 
  ?>
 <html lang="en">
@@ -58,7 +51,7 @@
 
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.php">Logout</a></li>
+                    <li><a class="logout" href="functions/logout.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -74,7 +67,7 @@
               <ul class="sidebar-menu" id="nav-accordion">
 
               	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
+              	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
                       <a href="index.php">
@@ -111,8 +104,8 @@
                           <span>Data Tables</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table.php">Basic Table</a></li>
-                          <li><a  href="responsive_table.php">Responsive Table</a></li>
+                          <li><a  href="basic_table.php">Returned Items Table</a></li>
+                          <li><a  href="responsive_table.php">Items Table</a></li>
                       </ul>
                   </li>
 
@@ -155,12 +148,19 @@
 									<div class="col-sm-10">
 
 										<input type="text" class="form-control input-size" id="exampleInputName1"placeholder="Full Name"  maxlength="50"  name="name" required>
+											<?php
+								      if(isset($_GET['error'])){
+								        echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">Only Letters Are Allowed!</p>";
+								        echo "<br>";
+								      }
+								      ?>
 									</div>
+
 								</div>
 								<div class="form-group">
 									<label for="exampleInputName3" class="col-sm-2 control-label">ID Number</label>
 									<div class="col-sm-10">
-										<input type="text" class="form-control input-size" id="exampleInputName3" maxlength="9" placeholder="2014-XXXX" name="id" required>
+										<input type="text" class="form-control input-size" id="exampleInputName3" maxlength="9" placeholder="20XX-XXXX" name="id" required>
 									</div>
 								</div>
 								<div class="form-group">
@@ -329,7 +329,7 @@
 
               <div class="row mt mb">
                   <div class="col-md-12">
-                      <section class="task-panel tasks-widget">
+                      <section class="task-panel tasks-widget task-css">
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> Borrower List</h5></div>
 	                        <br>
@@ -362,20 +362,13 @@
                                       <td>
                                         <button title="View items" data-id ="<?php echo $g->id;?>" name="view_data" class="btn btn-info btn-md view glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#myModal"></button>
                                         <button title="Update" name="update" data-id="<?php echo $g->id;?>" class="btn btn-success btn-md update glyphicon glyphicon-edit" data-toggle="modal" data-target="#updateModal"></button>
-                                      <a href="todo_list.php?id=<?php echo $g->id;?>
-                                        &action=delete" onclick="return confirm('Are you sure?')"
-                                        <button name="delete" title="Delete item" class="btn btn-danger btn-md  glyphicon glyphicon-trash"></button>
-                                      </a>
                                       </td>
                                     </tr>
                                     <?php endforeach;?>
                                   </tbody>
                                 </table>
                               </div>
-                              <div class=" add-task-row">
-                                  <a class="btn btn-success btn-sm pull-left" href="todo_list.php#">Borrow Item(s)</a>
 
-                              </div>
                           </div>
                       </section>
                   </div><!--/col-md-12 -->
@@ -528,4 +521,27 @@
 	.input-size{
 		width: 400px;
 	}
+	.task-css{
+		height: 500px;
+	}
+	/*table-scroll*/
+	.table{
+		position: relative;
+	}
+	.table-scroll tbody {
+	    position: absolute;
+	    overflow-y: scroll;
+	    height: 350px;
+	}
+
+	.table-scroll tr {
+	    width: 100%;
+	    table-layout: fixed;
+	    display: inline-table;
+	}
+
+	.table-scroll thead > tr > th {
+	    border: none;
+	}
+	/*END table-scroll*/
 </style>

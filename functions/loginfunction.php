@@ -1,14 +1,15 @@
-<?php 
+<?php
 	session_start();
 	include "function.php";
 	$db = connect();
+
 
 
 	if(isset($_POST['submit'])){
 
       $user = $_POST['username'];
       $password = $_POST['password'];
-      
+
       if(finduser($user,$password)){
          $stmt = $db->prepare("select * from login where username =:user");
 				$stmt->bindValue(':username',$user);
@@ -17,10 +18,11 @@
 
 				$_SESSION['login']=$account->id;
 
-				header("Location:../admin/borrower.php");
+				header("Location:../index.php");
+
    }
    else{
       header("Location:../login.php?error=1");
    }}
-	
+
 ?>

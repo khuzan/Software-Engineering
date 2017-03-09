@@ -48,7 +48,7 @@
 
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.php">Logout</a></li>
+                    <li><a class="logout" href="functions/logout.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -64,7 +64,7 @@
               <ul class="sidebar-menu" id="nav-accordion">
 
               	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
+              	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
                       <a class="active" href="index.php">
@@ -99,8 +99,8 @@
                           <span>Data Tables</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table.php">Basic Table</a></li>
-                          <li><a  href="responsive_table.php">Responsive Table</a></li>
+                          <li><a  href="basic_table.php">Returned Items Table</a></li>
+                          <li><a  href="responsive_table.php">Items Table</a></li>
                       </ul>
                   </li>
 
@@ -415,7 +415,7 @@
                       	</div>
                       	<div class="details">
                       		<p><a href="#">Khuzan Omandac</a><br/>
-                      		   <muted>I am Busy. Bitches!</muted>
+                      		   <muted>I'm Busy. Bitches!</muted>
                       		</p>
                       	</div>
                       </div>

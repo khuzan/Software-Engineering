@@ -46,5 +46,12 @@
 	return $results;
 		}
 
+		function getreturned(){
+			$db = connect();
+		$sth = $db->prepare("SELECT * From borrower WHERE status = 'returned'");
+		$sth->execute();
+		$results = $sth->fetchAll(PDO::FETCH_OBJ);
+		return $results;
+		}
 
  ?>
