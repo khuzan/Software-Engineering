@@ -39,6 +39,12 @@ if(isset($_POST["update"])){
                 <option value="BS Engineering - V">BS Engineering - V</option>
               </select></td>
          </tr>
+
+          <td width="30%"><input type="hidden" class="form-control" name="items" value="'.$res->descr.'" /></td></td>
+
+
+          <td width="30%"><input type="hidden" class="form-control" name="analogqty" value="'.$res->qty.'" /></td></td>
+
           <tr>
               <td width="30%"><label>SUBJECT</label></td>
               <td width="70%">
@@ -61,10 +67,6 @@ if(isset($_POST["update"])){
               <option value="not returned">NOT RETURNED</option>
             </select></td>
        </tr>
-       <tr>
-           <td width="30%"><label>DATE RETURNED</label></td>
-           <td width="70%"><input type="date" class="form-control" name="datereturn" value="'.$res->datereturn.'" /></td>
-      </tr>
       <tr>
           <td width="30%"><label>COMMENTS</label></td>
           <td width="70%"><textarea class="form-control" name="comment" value="'.$res->comments.'" /></td>

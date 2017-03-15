@@ -9,6 +9,10 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
   $sth = $db->prepare("DELETE FROM borrower WHERE id = :id");
   $sth->bindValue('id',$_GET['id']);
   $sth->execute();
+  echo ("<SCRIPT LANGUAGE='JavaScript'>
+      window.alert('Succesfully Updated')
+      window.location.href='basic_table.php'
+      </SCRIPT>");
 }
 ?>
 
@@ -50,7 +54,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.php" class="logo"><b>Inventory System</b></a>
+            <a href="homepage.php" class="logo"><b>Inventory System</b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -74,9 +78,9 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
-                      <a href="index.php">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
+                      <a href="homepage.php">
+                          <i class="fa fa-home"></i>
+                          <span>Homepage</span>
                       </a>
                   </li>
 
@@ -92,15 +96,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
                       </ul>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Forms</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="form_component.php">Form Components</a></li>
-                      </ul>
-                  </li>
+
                   <li class="sub-menu">
                       <a class="active" href="javascript:;" >
                           <i class="fa fa-th"></i>
@@ -170,94 +166,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
 	                  </div><!-- /col-md-12 -->
 				</div><!-- row -->
 
-              <div class="row mt">
-                  <div class="col-md-12">
-                      <div class="content-panel">
-                          <table class="table table-striped table-advance table-hover">
-	                  	  	  <h4><i class="fa fa-angle-right"></i> Advanced Table</h4>
-	                  	  	  <hr>
-                              <thead>
-                              <tr>
-                                  <th><i class="fa fa-bullhorn"></i> Company</th>
-                                  <th class="hidden-phone"><i class="fa fa-question-circle"></i> Descrition</th>
-                                  <th><i class="fa fa-bookmark"></i> Profit</th>
-                                  <th><i class=" fa fa-edit"></i> Status</th>
-                                  <th></th>
-                              </tr>
-                              </thead>
-                              <tbody>
-                              <tr>
-                                  <td><a href="basic_table.php#">Company Ltd</a></td>
-                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                  <td>12000.00$ </td>
-                                  <td><span class="label label-info label-mini">Due</span></td>
-                                  <td>
-                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <a href="basic_table.php#">
-                                          Dashgum co
-                                      </a>
-                                  </td>
-                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                  <td>17900.00$ </td>
-                                  <td><span class="label label-warning label-mini">Due</span></td>
-                                  <td>
-                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <a href="basic_table.php#">
-                                          Another Co
-                                      </a>
-                                  </td>
-                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                  <td>14400.00$ </td>
-                                  <td><span class="label label-success label-mini">Paid</span></td>
-                                  <td>
-                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <a href="basic_table.php#">
-                                          Dashgum ext
-                                      </a>
-                                  </td>
-                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                  <td>22000.50$ </td>
-                                  <td><span class="label label-success label-mini">Paid</span></td>
-                                  <td>
-                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td><a href="basic_table.php#">Total Ltd</a></td>
-                                  <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                  <td>12120.00$ </td>
-                                  <td><span class="label label-warning label-mini">Due</span></td>
-                                  <td>
-                                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                  </td>
-                              </tr>
-                              </tbody>
-                          </table>
-                      </div><!-- /content-panel -->
-                  </div><!-- /col-md-12 -->
-              </div><!-- /row -->
+            
 
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
@@ -266,7 +175,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 - Alvarez.is
+              2016-2017 khuzan.js
               <a href="basic_table.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>

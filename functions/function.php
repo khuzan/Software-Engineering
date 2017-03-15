@@ -54,4 +54,11 @@
 		return $results;
 		}
 
+		function getitemsbyname($name){
+			$db = connect();
+			$sth = $db->prepare("SELECT * From items WHERE description = '$name'");
+			$sth->execute();
+			$results = $sth->fetch(PDO::FETCH_OBJ);
+			return $results;
+		}
  ?>

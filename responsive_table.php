@@ -44,7 +44,7 @@ $db = connect();
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.php" class="logo"><b>Inventory System</b></a>
+            <a href="homepage.php" class="logo"><b>Inventory System</b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -68,9 +68,9 @@ $db = connect();
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
-                      <a href="index.php">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
+                      <a href="homepage.php">
+                          <i class="fa fa-home"></i>
+                          <span>Homepage</span>
                       </a>
                   </li>
 
@@ -86,15 +86,7 @@ $db = connect();
                       </ul>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Forms</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="form_component.php">Form Components</a></li>
-                      </ul>
-                  </li>
+
                   <li class="sub-menu">
                       <a class="active" href="javascript:;" >
                           <i class="fa fa-th"></i>
@@ -119,15 +111,19 @@ $db = connect();
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Responsive Table Examples</h3>
+          	<h3><i class="fa fa-angle-right"></i> INVENTORY</h3>
 		  		<div class="row mt">
 			  		<div class="col-lg-12">
 
-                      <div class="content-panel">
-                          <section id="unseen">
+                      <div class="content-panel"  id="div_print">
+                          <section id="unseen " >
                             <table class="table table-bordered table-striped table-condensed">
-                            <h4><i class="fa fa-angle-right"></i> Digital Laboratory Items Table</h4>
-  	                  	  	  <hr>
+                            <h4><i class="fa fa-angle-right"></i> Digital Laboratory Items Table
+                                <input name="b_print" type="button" class="btn btn-primary btn-sm pull-right bira"   onClick="printdiv('div_print');" value=" Print ">
+                               <button type="button" name="button" class="btn btn-success btn-sm pull-right bira" data-toggle="modal" data-target="#dataModal">Add Items</button>
+                             </h4>
+
+                            <hr>
   	                              <thead>
                                   <tr>
                                     <th>QTY</th>
@@ -158,166 +154,146 @@ $db = connect();
   	                          </table>
                           </section>
 
+
                   </div><!-- /content-panel -->
+
                </div><!-- /col-lg-4 -->
 		  	</div><!-- /row -->
 
-		  	<div class="row mt">
-              <div class="col-lg-12">
-                      <div class="content-panel">
-						  <h4><i class="fa fa-angle-right"></i> No More Table</h4>
-                          <section id="no-more-tables">
-                              <table class="table table-bordered table-striped table-condensed cf">
-                                  <thead class="cf">
-                                  <tr>
-                                      <th>Code</th>
-                                      <th>Company</th>
-                                      <th class="numeric">Price</th>
-                                      <th class="numeric">Change</th>
-                                      <th class="numeric">Change %</th>
-                                      <th class="numeric">Open</th>
-                                      <th class="numeric">High</th>
-                                      <th class="numeric">Low</th>
-                                      <th class="numeric">Volume</th>
-                                  </tr>
-                                  </thead>
-                                  <tbody>
-                                  <tr>
-                                      <td data-title="Code">AAC</td>
-                                      <td data-title="Company">AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>
-                                      <td class="numeric" data-title="Price">$1.38</td>
-                                      <td class="numeric" data-title="Change">-0.01</td>
-                                      <td class="numeric" data-title="Change %">-0.36%</td>
-                                      <td class="numeric" data-title="Open">$1.39</td>
-                                      <td class="numeric" data-title="High">$1.39</td>
-                                      <td class="numeric" data-title="Low">$1.38</td>
-                                      <td class="numeric" data-title="Volume">9,395</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">AAD</td>
-                                      <td data-title="Company">ARDENT LEISURE GROUP</td>
-                                      <td class="numeric" data-title="Price">$1.15</td>
-                                      <td class="numeric" data-title="Change">  +0.02</td>
-                                      <td class="numeric" data-title="Change %">1.32%</td>
-                                      <td class="numeric" data-title="Open">$1.14</td>
-                                      <td class="numeric" data-title="High">$1.15</td>
-                                      <td class="numeric" data-title="Low">$1.13</td>
-                                      <td class="numeric" data-title="Volume">56,431</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">AAX</td>
-                                      <td data-title="Company">AUSENCO LIMITED</td>
-                                      <td class="numeric" data-title="Price">$4.00</td>
-                                      <td class="numeric" data-title="Change">-0.04</td>
-                                      <td class="numeric" data-title="Change %">-0.99%</td>
-                                      <td class="numeric" data-title="Open">$4.01</td>
-                                      <td class="numeric" data-title="High">$4.05</td>
-                                      <td class="numeric" data-title="Low">$4.00</td>
-                                      <td class="numeric" data-title="Volume">90,641</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">ABC</td>
-                                      <td data-title="Company">ADELAIDE BRIGHTON LIMITED</td>
-                                      <td class="numeric" data-title="Price">$3.00</td>
-                                      <td class="numeric" data-title="Change">  +0.06</td>
-                                      <td class="numeric" data-title="Change %">2.04%</td>
-                                      <td class="numeric" data-title="Open">$2.98</td>
-                                      <td class="numeric" data-title="High">$3.00</td>
-                                      <td class="numeric" data-title="Low">$2.96</td>
-                                      <td class="numeric" data-title="Volume">862,518</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">ABP</td>
-                                      <td data-title="Company">ABACUS PROPERTY GROUP</td>
-                                      <td class="numeric" data-title="Price">$1.91</td>
-                                      <td class="numeric" data-title="Change">0.00</td>
-                                      <td class="numeric" data-title="Change %">0.00%</td>
-                                      <td class="numeric" data-title="Open">$1.92</td>
-                                      <td class="numeric" data-title="High">$1.93</td>
-                                      <td class="numeric" data-title="Low">$1.90</td>
-                                      <td class="numeric" data-title="Volume">595,701</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">ABY</td>
-                                      <td data-title="Company">ADITYA BIRLA MINERALS LIMITED</td>
-                                      <td class="numeric" data-title="Price">$0.77</td>
-                                      <td class="numeric" data-title="Change">  +0.02</td>
-                                      <td class="numeric" data-title="Change %">2.00%</td>
-                                      <td class="numeric" data-title="Open">$0.76</td>
-                                      <td class="numeric" data-title="High">$0.77</td>
-                                      <td class="numeric" data-title="Low">$0.76</td>
-                                      <td class="numeric" data-title="Volume">54,567</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">ACR</td>
-                                      <td data-title="Company">ACRUX LIMITED</td>
-                                      <td class="numeric" data-title="Price">$3.71</td>
-                                      <td class="numeric" data-title="Change">  +0.01</td>
-                                      <td class="numeric" data-title="Change %">0.14%</td>
-                                      <td class="numeric" data-title="Open">$3.70</td>
-                                      <td class="numeric" data-title="High">$3.72</td>
-                                      <td class="numeric" data-title="Low">$3.68</td>
-                                      <td class="numeric" data-title="Volume">191,373</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">ADU</td>
-                                      <td data-title="Company">ADAMUS RESOURCES LIMITED</td>
-                                      <td class="numeric" data-title="Price">$0.72</td>
-                                      <td class="numeric" data-title="Change">0.00</td>
-                                      <td class="numeric" data-title="Change %">0.00%</td>
-                                      <td class="numeric" data-title="Open">$0.73</td>
-                                      <td class="numeric" data-title="High">$0.74</td>
-                                      <td class="numeric" data-title="Low">$0.72</td>
-                                      <td class="numeric" data-title="Volume">8,602,291</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">AGG</td>
-                                      <td data-title="Company">ANGLOGOLD ASHANTI LIMITED</td>
-                                      <td class="numeric" data-title="Price">$7.81</td>
-                                      <td class="numeric" data-title="Change">-0.22</td>
-                                      <td class="numeric" data-title="Change %">-2.74%</td>
-                                      <td class="numeric" data-title="Open">$7.82</td>
-                                      <td class="numeric" data-title="High">$7.82</td>
-                                      <td class="numeric" data-title="Low">$7.81</td>
-                                      <td class="numeric" data-title="Volume">148</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">AGK</td>
-                                      <td data-title="Company">AGL ENERGY LIMITED</td>
-                                      <td class="numeric" data-title="Price">$13.82</td>
-                                      <td class="numeric" data-title="Change">  +0.02</td>
-                                      <td class="numeric" data-title="Change %">0.14%</td>
-                                      <td class="numeric" data-title="Open">$13.83</td>
-                                      <td class="numeric" data-title="High">$13.83</td>
-                                      <td class="numeric" data-title="Low">$13.67</td>
-                                      <td class="numeric" data-title="Volume">846,403</td>
-                                  </tr>
-                                  <tr>
-                                      <td data-title="Code">AGO</td>
-                                      <td data-title="Company">ATLAS IRON LIMITED</td>
-                                      <td class="numeric" data-title="Price">$3.17</td>
-                                      <td class="numeric" data-title="Change">-0.02</td>
-                                      <td class="numeric" data-title="Change %">-0.47%</td>
-                                      <td class="numeric" data-title="Open">$3.11</td>
-                                      <td class="numeric" data-title="High">$3.22</td>
-                                      <td class="numeric" data-title="Low">$3.10</td>
-                                      <td class="numeric" data-title="Volume">5,416,303</td>
-                                  </tr>
-                                  </tbody>
-                              </table>
-                          </section>
-                      </div><!-- /content-panel -->
-                  </div><!-- /col-lg-12 -->
-              </div><!-- /row -->
+
 
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
+      <!-- ADD MODAL -->
+      <div class="modal fade" id="dataModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title" align="center">ADD ITEMS</h4>
+				</div>
+				<div class="modal-body" id="modalview">
+
+
+					<form method="POST" action="functions/add_items_process.php" class="form-horizontal tasi-form">
+<div class="table-responsive">
+		<table class="table table-striped">
+      <tr>
+            <td>
+              <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Quantity</label>
+            </td>
+            <td>
+            <input type="text" class="form-control input-size" id="inputSuccess" name="qty" maxlength="5" required>
+            <?php
+            if(isset($_GET['error'])){
+              echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">Only Numbers Are Allowed!</p>";
+              echo "<br>";
+            }
+            ?>
+            </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label class="col-sm-2 control-label  col-lg-2" for="inputWarning">Description</label>
+        </td>
+        <td>
+          <input type="text" class="form-control input-size" id="inputWarning" name="item" required>
+        </td>
+      </tr>
+
+      <tr>
+          <td>
+            <label class="col-sm-2 control-label col-lg-2 " for="inputError">Property Number</label>
+          </td>
+          <td>
+            <input type="text" class="form-control input-size" id="inputError" name="pprty" required>
+          </td>
+      </tr>
+
+      <tr>
+          <td>
+            <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Classification</label>
+          </td>
+            <td>
+              <select class="form-control input-size" name="acc" required>
+              <option></option>
+              <option value="ENGINEERING-DIGITAL LAB EQPT">ENGINEERING-DIGITAL LAB EQPT</option>
+              </select>
+            </td>
+      </tr>
+
+      <tr>
+          <td>
+            <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Department</label>
+          </td>
+          <td>
+            <select class="form-control input-size" name="dept" required>
+            <option></option>
+            <option value="ENGINEERING">ENGINEERING</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+           <td>
+             <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Location</label>
+           </td>
+           <td>
+           <select class="form-control input-size" name="loca" required>
+           <option></option>
+           <option value="Digital Laboratory">Digital Laboratory</option>
+           </select>
+           </td>
+       </tr>
+       <tr>
+        <td>
+        <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Assignee</label>
+        </td>
+        <td>
+        <select class="form-control input-size" name="ass" required>
+        <option></option>
+        <option value="ENGR. JOSE RHYZ ISMAEL">ENGR. JOSE RHYZ ISMAEL</option>
+        </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+        <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Remarks</label>
+        </td>
+          <td>
+          <select class="form-control input-size" name="remarks" required>
+          <option></option>
+            <option value="Good Condition">Good Condition</option>
+            <option value="Bad Condition">Bad Condition</option>
+            <option value="Operational">Operational</option>
+            <option value="Not Operational">Not Operational</option>
+          </select>
+          </td>
+        </tr>
+
+		</table>
+
+</div>
+										</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button class="btn btn-primary" name="add_items">Submit</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+      <!-- END ADD MODAL -->
 
       <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 - Alvarez.is
+              2016-2017 khuzan.js
               <a href="responsive_table.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
@@ -338,7 +314,26 @@ $db = connect();
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-
+    <script type="text/javascript">
+    //  start print
+    function printdiv(printpage)
+{
+var headstr = "<html><head><title></title></head><body>";
+var footstr = "</body>";
+var newstr = document.all.item(printpage).innerHTML;
+var oldstr = document.body.innerHTML;
+document.body.innerHTML = headstr+newstr+footstr;
+window.print();
+document.body.innerHTML = oldstr;
+return false;
+}
+// end print
+    </script>
 
   </body>
 </html>
+<style media="screen">
+  .bira{
+    margin-right: 10px;
+  }
+</style>

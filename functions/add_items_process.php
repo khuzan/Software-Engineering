@@ -14,28 +14,35 @@ if(isset($_POST['add_items'])){
   $assignee = $_POST['ass'];
   $remarks = $_POST['remarks'];
 
-  $query = $db->prepare("INSERT INTO items SET
-                      qty = :qty,
-                      description = :description,
-                      prpty_number = :prpty,
-                      classification = :classification,
-                      department = :department,
-                      location = :location,
-                      assignee = :assignee,
-                      remarks = :remarks");
-  $execute_query = [':qty' => $quantity,
-                    ':description' => $item,
-                    ':prpty' => $property,
-                    ':classification' => $classification,
-                    ':department' => $department,
-                    ':location' => $location,
-                    ':assignee' => $assignee,
-                    ':remarks' => $remarks];
-    if ($query->execute($execute_query)) {
-      header('location:../admin/items.php');  
-    }
+  if(preg_match("/\d/",$quantity) || preg_match("/W/", $quantity) || preg_match("/[a-zA-Z]/", $quantity))
+		   {
+ 			header("Location:../responsive_table.php?error");
+		}
     else {
-      echo "fail";
+      $query = $db->prepare("INSERT INTO items SET
+                          qty = :qty,
+                          description = :description,
+                          prpty_number = :prpty,
+                          classification = :classification,
+                          department = :department,
+                          location = :location,
+                          assignee = :assignee,
+                          remarks = :remarks");
+      $execute_query = [':qty' => $quantity,
+                        ':description' => $item,
+                        ':prpty' => $property,
+                        ':classification' => $classification,
+                        ':department' => $department,
+                        ':location' => $location,
+                        ':assignee' => $assignee,
+                        ':remarks' => $remarks];
+        if ($query->execute($execute_query)) {
+          header('location:../responsive_table.php');
+        }
+        else {
+          echo "fail";
+        }
     }
-}
+    }
+
  ?>

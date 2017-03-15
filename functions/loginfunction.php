@@ -18,11 +18,11 @@
 
 				$_SESSION['login']=$account->id;
 
-				header("Location:../index.php");
+				header("Location:../homepage.php");
 
    }
    else{
-      header("Location:../login.php?error=1");
+      header("Location:../index.php?error=1");
    }}
 
 ?>

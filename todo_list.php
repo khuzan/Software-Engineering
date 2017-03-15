@@ -46,7 +46,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.php" class="logo"><b>Inventory System</b></a>
+            <a href="homepage.php" class="logo"><b>Inventory System</b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -70,9 +70,9 @@
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
-                      <a href="index.php">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
+                      <a href="homepage.php">
+                          <i class="fa fa-home"></i>
+                          <span>Homepage</span>
                       </a>
                   </li>
 
@@ -89,15 +89,6 @@
                       </ul>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Forms</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="form_component.php">Form Components</a></li>
-                      </ul>
-                  </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-th"></i>
@@ -161,6 +152,12 @@
 									<label for="exampleInputName3" class="col-sm-2 control-label">ID Number</label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control input-size" id="exampleInputName3" maxlength="9" placeholder="20XX-XXXX" name="id" required>
+										<?php
+										if(isset($_GET['error2'])){
+											echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">Only Numbers Are Allowed!</p>";
+											echo "<br>";
+										}
+										?>
 									</div>
 								</div>
 								<div class="form-group">
@@ -185,7 +182,18 @@
 									<div class="col-sm-10">
 										<select class="form-control input-size" name="subj" id="exampleInputName4">
 											<option selected></option>
-											<option value="LOGIC">LOGIC</option>
+											<option value="EE51">EE51</option>
+											<option value="ECE552">ECE552</option>
+											<option value="CpE403">CpE403</option>
+											<option value="CpE402">CpE402</option>
+											<option value="CA211">CA211</option>
+											<option value="ECE510">ECE510</option>
+											<option value="EE70">EE70</option>
+											<option value="ECE554">ECE554</option>
+											<option value="ECE520">ECE520</option>
+											<option value="ECE320">ECE320</option>
+											<option value="GE414">GE414</option>
+											<option value="EE11">EE11</option>
 										</select>
 									</div>
 								</div>
@@ -207,14 +215,19 @@
                                         <tr>
 
 																				    <td>
-                                              <label class="custom-control checkbox-primary">
-                                              <input type="checkbox" name="analog" class="custom-control-input" value="Analog-Digital Communication Trainer">
-                                              <span class="custom-control-indicator"></span>
-                                              <span class="custom-control-description">Analog-Digital Communication Trainer</span>
+
+																							<select class="form-control" name="items" required>
+																								<option value="">Select Item</option>
+																								<option value="Analog-Digital Communication Trainer">Analog-Digital Communication Trainer</option>
+																								<option value="0-15 VOLTS POWER SUPPLY">0-15 VOLTS POWER SUPPLY</option>
+																								<option value="CAMSCO MOTOR STARTER">CAMSCO MOTOR STARTER</option>
+																								<option value="ANTENNA SYSTEM"> ANTENNA SYSTEM</option>
+																							</select>
+
                                               </label>
-																							<select class="form-control input-css " name="" data-toggle="dropdown">
+																							<select class="form-control input-css " name="analogqty" data-toggle="dropdown" required>
 																								<ul class="dropdown-menu scrollable-menu" role="menu">
-																									<option></option>
+																									<option>Quantity</option>
 																									<?php
 																									for ($i=1; $i <=50 ; $i++) {
 																										echo '<li><option value="'.$i.'">'.$i.'</option></li>';
@@ -225,64 +238,9 @@
                                             </td>
 
                                         </tr>
-                                        <tr>
-																				  <td>
-                                            <label class="custom-control checkbox-primary">
-                                            <input type="checkbox" name="power" class="custom-control-input" value="0-15 VOLTS POWER SUPPLY">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">0-15 VOLTS POWER SUPPLY</span>
-                                            </label>
-																						<select class="form-control input-css" name="" data-toggle="dropdown">
-																							<ul class="dropdown-menu scrollable-menu" role="menu">
-																								<option></option>
-																								<?php
-																								for ($i=1; $i <=50 ; $i++) {
-																									echo '<li><option value="'.$i.'">'.$i.'</option></li>';
-																								}
-																								?>
-																							</ul>
-																						</select>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>
-                                            <label class="custom-control checkbox-primary">
-                                            <input type="checkbox" name="camsco" class="custom-control-input" value="CAMSCO MOTOR STARTER">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">CAMSCO MOTOR STARTER</span>
-                                            </label>
-																						<select class="form-control input-css" name="" data-toggle="dropdown">
-																							<ul class="dropdown-menu scrollable-menu" role="menu">
-																								<option></option>
-																								<?php
-																								for ($i=1; $i <=50 ; $i++) {
-																									echo '<li><option value="'.$i.'">'.$i.'</option></li>';
-																								}
-																								?>
-																							</ul>
-																						</select>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>
-                                            <label class="custom-control checkbox-primary">
-                                            <input type="checkbox" name="antenna" class="custom-control-input" value="ANTENNA SYSTEM">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">ANTENNA SYSTEM</span>
-                                            </label>
 
-																						<select class="form-control input-css" name="" data-toggle="dropdown">
-																							<ul class="dropdown-menu scrollable-menu" role="menu">
-																								<option></option>
-																								<?php
-																								for ($i=1; $i <=50 ; $i++) {
-																									echo '<li><option value="'.$i.'">'.$i.'</option></li>';
-																								}
-																								?>
-																							</ul>
-																						</select>
-                                          </td>
-                                        </tr>
+
+
 
                                       </tbody>
                                     </table>
@@ -381,7 +339,7 @@
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 - Alvarez.is
+              2016-2017 khuzan.js
               <a href="todo_list.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
@@ -463,6 +421,19 @@
 						           }
 						      });
 						// end update script
+						//  start print
+						function printdiv(printpage)
+				{
+				var headstr = "<html><head><title></title></head><body>";
+				var footstr = "</body>";
+				var newstr = document.all.item(printpage).innerHTML;
+				var oldstr = document.body.innerHTML;
+				document.body.innerHTML = headstr+newstr+footstr;
+				window.print();
+				document.body.innerHTML = oldstr;
+				return false;
+				}
+				// end print
   </script>
 
   </body>
@@ -481,6 +452,7 @@
 
           </div>
           <div class="modal-footer">
+						<input name="b_print" type="button" class="btn btn-primary"   onClick="printdiv('div_print');" value=" Print ">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -516,6 +488,7 @@
 
 		    </div>
 		  </div>
+			<!-- END UPDATE MODAL -->
 </html>
 <style media="screen">
 	.input-size{
@@ -527,6 +500,7 @@
 	/*table-scroll*/
 	.table{
 		position: relative;
+
 	}
 	.table-scroll tbody {
 	    position: absolute;
@@ -542,6 +516,7 @@
 
 	.table-scroll thead > tr > th {
 	    border: none;
-	}
-	/*END table-scroll*/
+	}*/
+	/*END table-scroll
+
 </style>
