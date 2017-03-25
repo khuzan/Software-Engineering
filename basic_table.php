@@ -125,7 +125,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
 				<div class="row">
 
 	                  <div class="col-md-12 mt">
-	                  	<div class="content-panel">
+	                  	<div class="content-panel task-css">
 	                          <table class="table table-hover">
 	                  	  	  <h4><i class="fa fa-angle-right"></i> Returned Items</h4>
 	                  	  	  <hr>
@@ -144,12 +144,12 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
                                 <tbody>
                                 <?php foreach (getreturned() as $g):?>
                                   <tr>
-                                    <td ><?php echo $g->student_id; ?></td>
+                                    <td ><?php echo $g->id; ?></td>
                                     <td ><?php echo $g->name; ?></td>
                                     <td ><?php echo $g->course; ?></td>
                                     <td ><?php echo $g->subject; ?></td>
                                     <!-- <td ><?php echo $g->descr; ?></td> -->
-                                    <td ><?php echo $g->dates; ?></td>
+                                    <td ><?php echo $g->dateoflend; ?></td>
                                     <td ><?php echo $g->received; ?></td>
                                     <td>
                                       <button title="View items" data-id ="<?php echo $g->id;?>" name="view_data" class="btn btn-info btn-md view glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#myModal"></button>
@@ -166,7 +166,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
 	                  </div><!-- /col-md-12 -->
 				</div><!-- row -->
 
-            
+
 
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
@@ -272,3 +272,8 @@ return false;
 
   </body>
 </html>
+<style media="screen">
+.task-css{
+  height: 450px;
+}
+</style>

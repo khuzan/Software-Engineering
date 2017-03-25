@@ -156,8 +156,8 @@ else
 
                           <div class="col-lg-6 col-sm-6">
                               <hr class="section-heading-spacer">
-                              <h2 class="section-heading">The St. John Paul II College of Davao's Digital Laboratory</h2>
-                              <p class="lead" style="font-size:18px;">located at the 6th floor of the campus, is the laboratory used to enhance the skills and capabilities of the Engineering and Information Technology students in their electrical-related subjects such as (pag-mention diri ug atleast 3 subjects).
+                              <h2 class="section-heading">The Digital Laboratory</h2>
+                              <p class="lead" style="font-size:18px;" align="justify">Located at the St. John Paul II College of Davao's 6th floor, the Digital Laboratory is used to enhance the skills and capabilities of the Engineering and Information Technology students in their electrical-related subjects such as EE51, ECE552, CpE403, and more.
                               </p>
                           </div>
                           <div class="col-lg-6  col-sm-6">
@@ -177,8 +177,8 @@ else
 
                 <div class="col-lg-6  col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
-                    <h2 class="section-heading">Headed and supervised by Engr. Jose Rhyz Ismael</h2>
-                    <p class="lead">the said laboratory has several lists of equipment which could be borrowed by the students for free. The Borrowing System for Digital Laboratory would be Engr. Ismael's helping hand in monitoring those equipment lend to the students.
+                    <h2 class="section-heading">Headed and supervised by<br> Engr. Jose Rhyz Ismael</h2>
+                    <p class="lead" align="justify">The Digital Laboratory has several lists of equipment which could be borrowed by the students for free. This would be Engr. Ismael's helping hand in monitoring those equipment lend to the students. <br></br><br></br>
                     </p>
                 </div>
                 <div class="col-lg-6 col-sm-pull-6  col-sm-6">
@@ -224,7 +224,7 @@ else
                       		<img class="img-circle" src="assets/img/eman.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
-                      		<p><a href="#">Emmanuel Imbod</a><br/>
+                      		<p><a href="#">Eman Imbod</a><br/>
                       		   <muted>09302486876</muted>
                       		</p>
                       	</div>
@@ -274,7 +274,7 @@ else
     							<!-- WHITE PANEL - TOP USER -->
     							<div class="white-panel pn">
     								<div class="white-header">
-    									<h5><b>Analyst/Technical Writer</b></h5>
+    									<h5><b>Technical Writer</b></h5>
     								</div>
     								<p><img src="assets/img/jam.jpg" class="img-circle" width="80"></p>
     								<p><b>Jerlyn Jamora</b></p>
@@ -332,10 +332,10 @@ else
     							<!-- WHITE PANEL - TOP USER -->
     							<div class="white-panel pn">
     								<div class="white-header">
-    									<h5><b>Technical Writer/Tester</b></h5>
+    									<h5><b>Analyst</b></h5>
     								</div>
     								<p><img src="assets/img/eman.jpg" class="img-circle" width="80"></p>
-    								<p><b>Emmanuel Imbod</b></p>
+    								<p><b>Eman Imbod</b></p>
     								<div class="row">
     									<div class="col-md-12">
     										<p class="small mt">FOLLOW ME ON SOCIAL MEDIA</p>

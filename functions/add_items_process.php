@@ -14,7 +14,7 @@ if(isset($_POST['add_items'])){
   $assignee = $_POST['ass'];
   $remarks = $_POST['remarks'];
 
-  if(preg_match("/\d/",$quantity) || preg_match("/W/", $quantity) || preg_match("/[a-zA-Z]/", $quantity))
+  if( preg_match("/W/", $quantity) || preg_match("/[a-zA-Z]/", $quantity))
 		   {
  			header("Location:../responsive_table.php?error");
 		}
@@ -37,12 +37,15 @@ if(isset($_POST['add_items'])){
                         ':assignee' => $assignee,
                         ':remarks' => $remarks];
         if ($query->execute($execute_query)) {
-          header('location:../responsive_table.php');
+          echo ("<SCRIPT LANGUAGE='JavaScript'>
+              window.alert('Succesfully Added')
+              window.location.href='../responsive_table.php'
+              </SCRIPT>");
         }
         else {
           echo "fail";
         }
-    }
+   }
     }
 
  ?>

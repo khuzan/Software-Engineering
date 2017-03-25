@@ -17,7 +17,7 @@ if(isset($_POST["update"])){
          $output .= '
          <tr>
               <td width="30%"><label>STUDENT ID#</label></td>
-              <td width="70%">'.$res->student_id.'<input type="hidden" name="id" value="'.$res->id.'"></td>
+              <td width="70%">'.$res->id.'<input type="hidden" name="id" value="'.$res->id.'"></td>
          </tr>
          <tr>
               <td width="30%"><label>NAME</label></td>
@@ -40,10 +40,10 @@ if(isset($_POST["update"])){
               </select></td>
          </tr>
 
-          <td width="30%"><input type="hidden" class="form-control" name="items" value="'.$res->descr.'" /></td></td>
+          <td width="30%"><input type="hidden" class="form-control" name="items" value="" /></td></td>
 
 
-          <td width="30%"><input type="hidden" class="form-control" name="analogqty" value="'.$res->qty.'" /></td></td>
+          <td width="30%"><input type="hidden" class="form-control" name="analogqty" value="'.$res->b_qty.'" /></td></td>
 
           <tr>
               <td width="30%"><label>SUBJECT</label></td>
@@ -55,8 +55,9 @@ if(isset($_POST["update"])){
               </select></td>
          </tr>
          <tr>
+            <input type="hidden" name="b_id" value="'.$res->b_id.'">
              <td width="30%"><label>DATE OF LEND</label></td>
-             <td width="70%"><input type="date" class="form-control" name="detoflend" value="'.$res->dates.'" /></td>
+             <td width="70%"><input type="date" class="form-control" name="dateoflend" value="'.$res->dateoflend.'" /></td>
         </tr>
         <tr>
             <td width="30%"><label>STATUS</label></td>

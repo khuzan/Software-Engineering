@@ -1,6 +1,6 @@
 <?php
 	function connect(){
-		$db = new PDO("mysql:host=localhost;dbname=borrowing_system","root","");
+		$db = new PDO("mysql:host=localhost;dbname=inventory_system","root","");
 		return $db;
 	}
 
@@ -39,7 +39,9 @@
 
 		function getinfobyid($id){
 		$db = connect();
-	$sth = $db->prepare("SELECT * From borrower WHERE id = :id");
+	$sth = $db->prepare("SELECT * FROM borrowed_items
+					INNER JOIN borrower ON borrowed_items.borrower_id = borrower.id
+					WHERE borrower.id = :id");
 	$sth->bindValue('id',$id);
 	$sth->execute();
 	$results = $sth->fetch(PDO::FETCH_OBJ);
@@ -48,7 +50,8 @@
 
 		function getreturned(){
 			$db = connect();
-		$sth = $db->prepare("SELECT * From borrower WHERE status = 'returned'");
+		$sth = $db->prepare("SELECT * FROM borrowed_items
+            INNER JOIN borrower ON borrowed_items.borrower_id = borrower.id WHERE status = 'returned'");
 		$sth->execute();
 		$results = $sth->fetchAll(PDO::FETCH_OBJ);
 		return $results;
@@ -61,4 +64,35 @@
 			$results = $sth->fetch(PDO::FETCH_OBJ);
 			return $results;
 		}
+		function getitemsbyid($id){
+			$db = connect();
+			$sth = $db->prepare("SELECT * From items WHERE items_id = '$id'");
+			$sth->execute();
+			$results = $sth->fetch(PDO::FETCH_OBJ);
+			return $results;
+		}
+		function getborroweditemsbyid($b_id){
+			$db = connect();
+			$sth = $db->prepare("SELECT * From borrowed_items WHERE borrower_id = '$b_id'");
+			$sth->execute();
+			$results = $sth->fetchAll(PDO::FETCH_OBJ);
+			return $results;
+		}
+
+		function studentexists($name){
+ 		$db = connect();
+ 	$query = $db->prepare("SELECT * from borrower WHERE  name = ?");
+ 	$query->bindParam(1,$name);
+ 	$query->execute();
+	$results = $query->fetch(PDO::FETCH_OBJ);
+	return $results;
+}
+		function getborroweritemsbyid($borrower_id){
+ 		$db = connect();
+ 	$query = $db->prepare("SELECT * from borrowed_items WHERE  borrower_id = ?");
+ 	$query->bindParam(1,$borrower_id);
+ 	$query->execute();
+	$results = $query->fetch(PDO::FETCH_OBJ);
+	return $results;
+}
  ?>

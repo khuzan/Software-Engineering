@@ -114,173 +114,7 @@
       <section id="main-content">
           <section class="wrapper">
 
-          	<!-- COMPLEX TO DO LIST -->
-              <div class="row mt">
-                  <div class="col-md-12">
-                      <section class="task-panel tasks-widget">
-	                	<div class="panel-heading">
-	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> Registration Form - Personal Information </h5></div>
-	                        <br>
-	                 	</div>
-                          <div class="panel-body">
-                              <div class="task-content">
 
-																<!-- start -->
-					<div class="box">
-
-            <!-- box-header -->
-            <!-- form start -->
-
-
-							<form class="form-horizontal" method="POST"	action="functions/borrowprocess.php">
-							<div class="box-body ">
-								<div class="form-group ">
-									<label for="exampleInputName1" class="col-sm-2 control-label " >Full Name</label>
-									<div class="col-sm-10">
-
-										<input type="text" class="form-control input-size" id="exampleInputName1"placeholder="Full Name"  maxlength="50"  name="name" required>
-											<?php
-								      if(isset($_GET['error'])){
-								        echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">Only Letters Are Allowed!</p>";
-								        echo "<br>";
-								      }
-								      ?>
-									</div>
-
-								</div>
-								<div class="form-group">
-									<label for="exampleInputName3" class="col-sm-2 control-label">ID Number</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control input-size" id="exampleInputName3" maxlength="9" placeholder="20XX-XXXX" name="id" required>
-										<?php
-										if(isset($_GET['error2'])){
-											echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">Only Numbers Are Allowed!</p>";
-											echo "<br>";
-										}
-										?>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputName2" class="col-sm-2 control-label">Course/Year</label>
-									<div class="col-sm-10">
-										<select  name="course" class="form-control input-size" id="exampleInputName2" required>
-											<option selected ></option>
-											<option value="BS Information Technology - I">BS Information Technology - I</option>
-											<option value="BS Information Technology - II">BS Information Technology - II</option>
-											<option value="BS Information Technology - III">BS Information Technology - III</option>
-											<option value="BS Information Technology - IV">BS Information Technology - IV</option>
-											<option value="BS Engineering - I">BS Engineering - I</option>
-											<option value="BS Engineering - II">BS Engineering - II</option>
-											<option value="BS Engineering - III">BS Engineering - III</option>
-											<option value="BS Engineering - IV">BS Engineering - IV</option>
-											<option value="BS Engineering - V">BS Engineering - V</option>
-									 </select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputName4" class="col-sm-2 control-label">Subject</label>
-									<div class="col-sm-10">
-										<select class="form-control input-size" name="subj" id="exampleInputName4">
-											<option selected></option>
-											<option value="EE51">EE51</option>
-											<option value="ECE552">ECE552</option>
-											<option value="CpE403">CpE403</option>
-											<option value="CpE402">CpE402</option>
-											<option value="CA211">CA211</option>
-											<option value="ECE510">ECE510</option>
-											<option value="EE70">EE70</option>
-											<option value="ECE554">ECE554</option>
-											<option value="ECE520">ECE520</option>
-											<option value="ECE320">ECE320</option>
-											<option value="GE414">GE414</option>
-											<option value="EE11">EE11</option>
-										</select>
-									</div>
-								</div>
-
-							</div>
-
-          </div>
-					<!-- BOX HEADER END -->
-					      <div class="row-group">
-                                    <div class="table-width">
-                                      <table class="table table-fixed table-bordered form-inline">
-                                      <thead>
-                                        <tr>
-                                          <th>ITEM DESCRIPTION</th>
-																				</tr>
-
-                                      </thead>
-                                      <tbody>
-                                        <tr>
-
-																				    <td>
-
-																							<select class="form-control" name="items" required>
-																								<option value="">Select Item</option>
-																								<option value="Analog-Digital Communication Trainer">Analog-Digital Communication Trainer</option>
-																								<option value="0-15 VOLTS POWER SUPPLY">0-15 VOLTS POWER SUPPLY</option>
-																								<option value="CAMSCO MOTOR STARTER">CAMSCO MOTOR STARTER</option>
-																								<option value="ANTENNA SYSTEM"> ANTENNA SYSTEM</option>
-																							</select>
-
-                                              </label>
-																							<select class="form-control input-css " name="analogqty" data-toggle="dropdown" required>
-																								<ul class="dropdown-menu scrollable-menu" role="menu">
-																									<option>Quantity</option>
-																									<?php
-																									for ($i=1; $i <=50 ; $i++) {
-																										echo '<li><option value="'.$i.'">'.$i.'</option></li>';
-																									}
-																									?>
-																								</ul>
-																							</select>
-                                            </td>
-
-                                        </tr>
-
-
-
-
-                                      </tbody>
-                                    </table>
-                                    </div>
-                                  </div>
-
-
-                                </div>
-
-                                  <div class="row">
-                                      <div class="col-sm-4">
-                                          <!-- ILLUSION -->
-                                      </div>
-                                      <div class="col-sm-4">
-                                        <div align=center>
-                                          <label for="check">CHECKED BY	:</label><br>
-                                          <label class="custom-control custom-checkbox" id="check">
-                                          <input type="checkbox" class="custom-control-input" value="ENGR. JOSE RHYZ ISMAEL" name="checked" required>
-                                          <span class="custom-control-indicator"></span>
-                                          <span class="custom-control-description">ENGR. JOSE RHYZ ISMAEL</span>
-                                          <hr style="width:180px; margin:0 auto; border-bottom: 1px solid black;">
-                                          </label>
-                                        </div>
-
-                                      </div>
-
-                                  </div>
-
-
-
-                              <div class=" add-task-row">
-                                  <a class="btn btn-success btn-sm pull-left" href="todo_list.php#">Borrow Item(s)</a>
-
-                                  <button type="submit" title="submit" name="borrow" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-check"></span> SUBMIT</button>
-                              </div>
-                              </form>
-                          </div>
-                      </section>
-                  </div><!-- /col-md-12-->
-              </div><!-- /row -->
 
 
           	<!-- SORTABLE TO DO LIST -->
@@ -289,7 +123,9 @@
                   <div class="col-md-12">
                       <section class="task-panel tasks-widget task-css">
 	                	<div class="panel-heading">
-	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> Borrower List</h5></div>
+	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> Borrower List</h5>
+													</div>
+													<button title="Add student" name="add"  class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#Modaladd">Add Student</button>
 	                        <br>
 	                 	</div>
                           <div class="panel-body">
@@ -301,22 +137,16 @@
                                       <th >NAME</th>
                                       <th >COURSE</th>
                                       <th >SUBJECT</th>
-                                      <!-- <th >DESCRIPTION</th> -->
-                                      <th >DATE OF LEND</th>
-                                      <th >CHECKED BY</th>
                                       <th >OPTION</th>
                                     </tr>
                                   </thead>
                                   <tbody>
                                   <?php foreach (getinfo() as $g):?>
                                     <tr>
-                                      <td ><?php echo $g->student_id; ?></td>
+                                      <td ><?php echo $g->id; ?></td>
                                       <td ><?php echo $g->name; ?></td>
                                       <td ><?php echo $g->course; ?></td>
                                       <td ><?php echo $g->subject; ?></td>
-                                      <!-- <td ><?php echo $g->descr; ?></td> -->
-                                      <td ><?php echo $g->dates; ?></td>
-                                      <td ><?php echo $g->received; ?></td>
                                       <td>
                                         <button title="View items" data-id ="<?php echo $g->id;?>" name="view_data" class="btn btn-info btn-md view glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#myModal"></button>
                                         <button title="Update" name="update" data-id="<?php echo $g->id;?>" class="btn btn-success btn-md update glyphicon glyphicon-edit" data-toggle="modal" data-target="#updateModal"></button>
@@ -437,6 +267,117 @@
   </script>
 
   </body>
+	<!-- ADD MODAL -->
+	<div class="modal fade" id="Modaladd" role="dialog">
+			<div class="modal-dialog ">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title " align="center">Registration Form - Student Information</h4>
+					</div>
+					<div class="modal-body" id="addModal">
+
+						<div class="box">
+	            <!-- box-header -->
+	            <!-- form start -->
+								<form class="form-horizontal" method="POST"	action="cart.php">
+								<div class="box-body ">
+
+									<div class="form-group">
+										<label for="exampleInputName3" class="col-sm-2 control-label">ID Number</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control input-size" id="exampleInputName3" maxlength="9" placeholder="20XX-XXXX" name="id" required>
+											<?php
+											if(isset($_GET['error2'])){
+												echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">Only Numbers Are Allowed!</p>";
+												echo "<br>";
+											}
+											?>
+										</div>
+									</div>
+									<div class="form-group ">
+										<label for="exampleInputName1" class="col-sm-2 control-label " >Full Name</label>
+										<div class="col-sm-10">
+
+											<input type="text" class="form-control input-size" id="exampleInputName1"placeholder="Full Name"  maxlength="50"  name="name" required>
+												<?php
+									      if(isset($_GET['error'])){
+									        echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">Only Letters Are Allowed!</p>";
+									        echo "<br>";
+									      }
+									      ?>
+										</div>
+
+									</div>
+									<div class="form-group">
+										<label for="exampleInputName2" class="col-sm-2 control-label">Course/Year</label>
+										<div class="col-sm-10">
+											<select  name="course" class="form-control input-size" id="exampleInputName2" required>
+												<option selected ></option>
+												<option value="BS Information Technology - I">BS Information Technology - I</option>
+												<option value="BS Information Technology - II">BS Information Technology - II</option>
+												<option value="BS Information Technology - III">BS Information Technology - III</option>
+												<option value="BS Information Technology - IV">BS Information Technology - IV</option>
+												<option value="BS Engineering - I">BS Engineering - I</option>
+												<option value="BS Engineering - II">BS Engineering - II</option>
+												<option value="BS Engineering - III">BS Engineering - III</option>
+												<option value="BS Engineering - IV">BS Engineering - IV</option>
+												<option value="BS Engineering - V">BS Engineering - V</option>
+										 </select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="exampleInputName4" class="col-sm-2 control-label">Subject</label>
+										<div class="col-sm-10">
+											<select class="form-control input-size" name="subject" id="exampleInputName4">
+												<option selected></option>
+												<option value="EE51">EE51</option>
+												<option value="ECE552">ECE552</option>
+												<option value="CpE403">CpE403</option>
+												<option value="CpE402">CpE402</option>
+												<option value="CA211">CA211</option>
+												<option value="ECE510">ECE510</option>
+												<option value="EE70">EE70</option>
+												<option value="ECE554">ECE554</option>
+												<option value="ECE520">ECE520</option>
+												<option value="ECE320">ECE320</option>
+												<option value="GE414">GE414</option>
+												<option value="EE11">EE11</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<div align=center>
+											<label for="check">CHECKED BY	:</label><br>
+											<label class="custom-control custom-checkbox" id="check">
+											<input type="checkbox" class="custom-control-input" value="ENGR. JOSE RHYZ ISMAEL" name="checked" required>
+											<span class="custom-control-indicator"></span>
+											<span class="custom-control-description">ENGR. JOSE RHYZ ISMAEL</span>
+											<hr style="width:180px; margin:0 auto; border-bottom: 1px solid black;">
+											</label>
+										</div>
+
+									</div>
+
+								</div>
+								<!-- end BOX -->
+
+	          </div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" title="submit" name="submit" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span> SUBMIT</button>
+					</div>
+				</form>
+				<!-- END FORM -->
+				</div>
+
+			</div>
+		</div>
+		<!-- END ADD MODAL -->
+
 	<!-- VIEW MODAL -->
   <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
@@ -445,7 +386,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title" align="center">Borrower's Details</h4>
+            <h4 class="modal-title" align="center">Borrower's Detail</h4>
           </div>
           <div class="modal-body" id="modalview">
             <p id = "test" align="center">Some text in the modal.</p>
@@ -491,9 +432,7 @@
 			<!-- END UPDATE MODAL -->
 </html>
 <style media="screen">
-	.input-size{
-		width: 400px;
-	}
+
 	.task-css{
 		height: 500px;
 	}
