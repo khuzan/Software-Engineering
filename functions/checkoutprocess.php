@@ -25,7 +25,11 @@
 		 $qty = $r['qty'];
 		 $d = getitemsbyid($id);
 		 if($qty > $d->qty){
-			 header('Location: ../checkout.php?qtyerror');
+			 echo ("<SCRIPT LANGUAGE='JavaScript'>
+ 	        window.alert('Too much quantity!')
+ 	        window.location.href='../checkout.php.'
+ 	        </SCRIPT>");
+			//  header('Location: ../checkout.php?qtyerror');
 			 exit();
 			 break;
 		 }

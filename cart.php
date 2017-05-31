@@ -10,6 +10,16 @@
 		$_SESSION['subject'] = $_POST['subject'];
 		$_SESSION['checked'] = $_POST['checked'];
 
+		$name = $_SESSION['name'] ;
+		if(preg_match("/\d/",$name) || preg_match("/W/", $name))
+			   {
+
+	 			header("Location:todo_list.php?error");
+			}
+			else {
+				# code...
+
+
 try {
 	$r = studentexists($_SESSION['name']);
 	if($r){
@@ -22,10 +32,12 @@ try {
 							</SCRIPT>");
 				}
 	}
+
+
 } catch (Exception $e) {
 	echo $e;
 }
-
+}
 	}
 
 
@@ -90,7 +102,7 @@ try {
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/budskie.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
@@ -162,7 +174,7 @@ try {
 																	}else{
 																		echo '<div class="product">
 																			<h3>'.$g->description.'</h3>
-																			<a href="functions/add-to-cart.php?id='.$g->items_id.'"> ADD TO CART</a>
+																			<a href="functions/add-to-cart.php?id='.$g->items_id.'">Add to list</a>
 
 																		</div>';
 																	} ?>

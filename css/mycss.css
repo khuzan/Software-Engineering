@@ -12,9 +12,21 @@
 	width: 45%;
 	height: 200px;
 }
-	h3{
+	/*h3{
 		width:50%;
 		font-size: 12px;
 	    margin:0 auto;
 	    text-align: center;
+	}*/
+
+
+
+	#search{
+		width: 300px;
+		margin: 15px 0px -15px 10px;
+	}
+	#borrower-search{
+		width: 300px;
+		margin: 15px 0px 15px -100px;
+
 	}

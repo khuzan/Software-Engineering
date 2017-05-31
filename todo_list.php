@@ -26,7 +26,7 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/to-do.css">
-
+		<link href="css/mycss.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -66,7 +66,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/budskie.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
@@ -127,10 +127,16 @@
 													</div>
 													<button title="Add student" name="add"  class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#Modaladd">Add Student</button>
 	                        <br>
+													<div class="input-group pull-left" id="borrower-search">
+															<input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+															<span class="input-group-addon">
+																	<i class="fa fa-search"></i>
+															</span>
+													</div>
 	                 	</div>
                           <div class="panel-body">
                               <div class="task-content">
-                                <table class="table table-scroll table-striped">
+                                <table class="table table-scroll table-striped" id="myTable">
                                   <thead>
                                     <tr>
                                       <th >STUDENT ID#</th>
@@ -264,6 +270,24 @@
 				return false;
 				}
 				// end print
+				// search
+				function myFunction() {
+			var input, filter, table, tr, td, i;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			table = document.getElementById("myTable");
+			tr = table.getElementsByTagName("tr");
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[1];
+				if (td) {
+					if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+					}
+				}
+			}
+		}
   </script>
 
   </body>
@@ -288,7 +312,7 @@
 									<div class="form-group">
 										<label for="exampleInputName3" class="col-sm-2 control-label">ID Number</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control input-size" id="exampleInputName3" maxlength="9" placeholder="20XX-XXXX" name="id" required>
+											<input type="number" class="form-control input-size" id="exampleInputName3" maxlength="9" placeholder="20XX-XXXX" name="id" min="1" required>
 											<?php
 											if(isset($_GET['error2'])){
 												echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">Only Numbers Are Allowed!</p>";
@@ -429,6 +453,7 @@
 
 		    </div>
 		  </div>
+
 			<!-- END UPDATE MODAL -->
 </html>
 <style media="screen">
@@ -456,6 +481,7 @@
 	.table-scroll thead > tr > th {
 	    border: none;
 	}*/
+
 	/*END table-scroll
 
 </style>

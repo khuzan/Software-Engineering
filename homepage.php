@@ -77,7 +77,7 @@ else
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/budskie.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
@@ -332,7 +332,7 @@ else
     							<!-- WHITE PANEL - TOP USER -->
     							<div class="white-panel pn">
     								<div class="white-header">
-    									<h5><b>Analyst</b></h5>
+    									<h5><b>System Analyst</b></h5>
     								</div>
     								<p><img src="assets/img/eman.jpg" class="img-circle" width="80"></p>
     								<p><b>Eman Imbod</b></p>

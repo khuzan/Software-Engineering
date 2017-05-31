@@ -49,15 +49,26 @@ if(isset($_POST["update"])){
               <td width="30%"><label>SUBJECT</label></td>
               <td width="70%">
               <select class="form-control" name="subj">
-                <option>'.$res->subject.'</option>
-                <option value="logic">LOGIC</option>
+                <option>'.$res->subject.'</option>  
+                <option value="EE51">EE51</option>
+                <option value="ECE552">ECE552</option>
+                <option value="CpE403">CpE403</option>
+                <option value="CpE402">CpE402</option>
+                <option value="CA211">CA211</option>
+                <option value="ECE510">ECE510</option>
+                <option value="EE70">EE70</option>
+                <option value="ECE554">ECE554</option>
+                <option value="ECE520">ECE520</option>
+                <option value="ECE320">ECE320</option>
+                <option value="GE414">GE414</option>
+                <option value="EE11">EE11</option>
                 <option></option>
               </select></td>
          </tr>
          <tr>
             <input type="hidden" name="b_id" value="'.$res->b_id.'">
              <td width="30%"><label>DATE OF LEND</label></td>
-             <td width="70%"><input type="date" class="form-control" name="dateoflend" value="'.$res->dateoflend.'" /></td>
+             <td width="70%"><input type="date" class="form-control" name="dateoflend" value="'.$res->dateoflend.'" ></td>
         </tr>
         <tr>
             <td width="30%"><label>STATUS</label></td>
@@ -70,7 +81,7 @@ if(isset($_POST["update"])){
        </tr>
       <tr>
           <td width="30%"><label>COMMENTS</label></td>
-          <td width="70%"><textarea class="form-control" name="comment" value="'.$res->comments.'" /></td>
+          <td width="70%"><textarea class="form-control" maxlength="500" name="comment" value="'.$res->comments.'" >'.$res->comments.'</textarea></td>
      </tr>';
 
          $output .= '</table></div>';

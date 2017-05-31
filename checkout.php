@@ -89,7 +89,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/budskie.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
@@ -157,8 +157,8 @@
 			<td><input type="hidden" name="<?php echo 'product['.$i.'][id]'?>" value="<?php echo $g->items_id; ?>"><?php echo $g->items_id; ?>
 			<td> <?php echo $g->description; ?></td>
 			<td><?php echo $g->prpty_number; ?></td>
-			<td><input type="number" name="<?php echo 'product['.$i.'][qty]' ?>" value="1" min="1"></td>
-			<td><a id="delete" href="checkout.php?delete=<?php echo $g->items_id;?>">DELETE</a></td>
+			<td><input type="number" name="<?php echo 'product['.$i.'][qty]' ?>" value="1" min="1" required></td>
+			<td><a id="delete" href="checkout.php?delete=<?php echo $g->items_id;?>">REMOVE</a></td>
 
 
 
@@ -168,9 +168,9 @@
 
 		</tr>
 		<?php endforeach; ?>
-		<button type="button"  name="button"><a href="cart.php">Add more item</a></button>
-		<input type="hidden" name="student_id" value="<?php echo $id;?>"><?php echo $id;?>
-		<button name="submit">SUBMIT</button>
+		<button type="button"  name="button" class="btn btn-basic btn-sm"><a href="cart.php">Add more item</a></button>
+		<input type="hidden" name="student_id" value="<?php echo $id;?>">
+		<button name="submit" class="btn btn-primary btn-sm pull-right">SUBMIT</button>
 		</form>
 
 	</table>
@@ -227,7 +227,9 @@
 
 </html>
 <style media="screen">
-
+	.btn{
+		margin: 10px;
+	}
 	.task-css{
 		height: 550px;
 	}

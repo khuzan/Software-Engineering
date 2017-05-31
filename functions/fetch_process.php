@@ -53,8 +53,6 @@ $id = $_POST['M_view'];
                <tr>
                    <td width="30%"><label>ITEM DESCRIPTION</label></td>
                    <td width="20%"><label>DATE OF LEND</label></td>
-                   <td width="20%"><label>STATUS</label></td>
-                   <td width="20%"><label>DATE RETURNED</label></td>
                    <td width="10%"><label>QUANTITY</label></td>
 
               </tr>';
@@ -64,11 +62,20 @@ $id = $_POST['M_view'];
 
                     <td>'.$a->description.'</td>
                     <td>'.$a->dateoflend.'</td>
-                    <td>'.$a->status.'</td>
-                    <td>'.$a->dateofreturn.'</td>
                     <td width="70%">'.$a->b_qty.'</td>
               </tr>';
             }
+            $output .=  '</table>
+              <table class="table table-bordered">
+              <tr>
+                   <td width="30%"><label>STATUS</label></td>
+                   <td width="70%">'.$res->status.'</td>
+              </tr>
+              <tr>
+                   <td width="30%"><label>DATE OF RETURN</label></td>
+                   <td width="70%">'.$res->dateofreturn.'</td>
+              </tr>';
+
 
             $output .=  '</table>
               <table class="table table-bordered">

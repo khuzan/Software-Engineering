@@ -33,6 +33,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
 
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="css/mycss.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -74,7 +75,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/budskie.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
@@ -122,12 +123,18 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
       <section id="main-content">
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> Basic Tables</h3>
-				<div class="row">
+				<div class="row mt">
 
 	                  <div class="col-md-12 mt">
 	                  	<div class="content-panel task-css">
-	                          <table class="table table-hover">
+	                          <table class="table table-hover" id="myTable">
 	                  	  	  <h4><i class="fa fa-angle-right"></i> Returned Items</h4>
+                            <div class="input-group" id="search">
+                                <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
 	                  	  	  <hr>
 	                              <thead>
                                   <tr>
@@ -268,12 +275,27 @@ document.body.innerHTML = oldstr;
 return false;
 }
     // end print
+
+
+    // search
+    function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
   </script>
 
   </body>
 </html>
-<style media="screen">
-.task-css{
-  height: 450px;
-}
-</style>

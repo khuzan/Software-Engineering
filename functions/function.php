@@ -87,6 +87,7 @@
 	$results = $query->fetch(PDO::FETCH_OBJ);
 	return $results;
 }
+		
 		function getborroweritemsbyid($borrower_id){
  		$db = connect();
  	$query = $db->prepare("SELECT * from borrowed_items WHERE  borrower_id = ?");

@@ -22,7 +22,7 @@ $db = connect();
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-
+      <link href="css/mycss.css" rel="stylesheet">
     <link href="assets/css/table-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -64,7 +64,7 @@ $db = connect();
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/budskie.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
@@ -117,12 +117,17 @@ $db = connect();
 
                       <div class="content-panel"  id="div_print">
                           <section id="unseen " >
-                            <table class="table table-bordered table-striped table-condensed">
+                            <table class="table table-bordered table-striped table-condensed" id="myTable">
                             <h4><i class="fa fa-angle-right"></i> Digital Laboratory Items Table
                                 <input name="b_print" type="button" class="btn btn-primary btn-sm pull-right bira"   onClick="printdiv('div_print');" value=" Print ">
                                <button type="button" name="button" class="btn btn-success btn-sm pull-right bira" data-toggle="modal" data-target="#dataModal">Add Items</button>
                              </h4>
-
+                             <div class="input-group" id="search">
+                                 <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for Item description..">
+                                 <span class="input-group-addon">
+                                     <i class="fa fa-search"></i>
+                                 </span>
+                             </div>
                             <hr>
   	                              <thead>
                                   <tr>
@@ -328,6 +333,25 @@ document.body.innerHTML = oldstr;
 return false;
 }
 // end print
+
+// search
+function myFunction() {
+var input, filter, table, tr, td, i;
+input = document.getElementById("myInput");
+filter = input.value.toUpperCase();
+table = document.getElementById("myTable");
+tr = table.getElementsByTagName("tr");
+for (i = 0; i < tr.length; i++) {
+td = tr[i].getElementsByTagName("td")[1];
+if (td) {
+  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+    tr[i].style.display = "";
+  } else {
+    tr[i].style.display = "none";
+  }
+}
+}
+}
     </script>
 
   </body>
