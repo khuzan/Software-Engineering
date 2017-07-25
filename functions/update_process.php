@@ -49,7 +49,7 @@ if(isset($_POST["update"])){
               <td width="30%"><label>SUBJECT</label></td>
               <td width="70%">
               <select class="form-control" name="subj">
-                <option>'.$res->subject.'</option>  
+                <option>'.$res->subject.'</option>
                 <option value="EE51">EE51</option>
                 <option value="ECE552">ECE552</option>
                 <option value="CpE403">CpE403</option>
@@ -67,8 +67,6 @@ if(isset($_POST["update"])){
          </tr>
          <tr>
             <input type="hidden" name="b_id" value="'.$res->b_id.'">
-             <td width="30%"><label>DATE OF LEND</label></td>
-             <td width="70%"><input type="date" class="form-control" name="dateoflend" value="'.$res->dateoflend.'" ></td>
         </tr>
         <tr>
             <td width="30%"><label>STATUS</label></td>

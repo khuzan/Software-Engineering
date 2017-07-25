@@ -11,17 +11,21 @@
 		$_SESSION['checked'] = $_POST['checked'];
 
 		$name = $_SESSION['name'] ;
-		if(preg_match("/\d/",$name) || preg_match("/W/", $name))
+		$limit_id = $_SESSION['id'];
+				if(preg_match("/\d/",$name) || preg_match("/W/", $name))
 			   {
 
 	 			header("Location:todo_list.php?error");
+			}
+			elseif ((strlen($limit_id) <8 ) || (strlen($limit_id) > 8)) {
+				header("Location:todo_list.php?error2");
 			}
 			else {
 				# code...
 
 
 try {
-	$r = studentexists($_SESSION['name']);
+	$r = studentexists($_SESSION['name'],$_SESSION['id']);
 	if($r){
 		$s = getborroweritemsbyid($r->id);
 		$borrowernotreturned = $s->status;
@@ -82,7 +86,7 @@ try {
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="homepage.php" class="logo"><b>Inventory System</b></a>
+            <a href="About.php" class="logo"><b>Inventory System</b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -106,9 +110,9 @@ try {
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
-                      <a href="homepage.php">
+                      <a href="About.php">
                           <i class="fa fa-home"></i>
-                          <span>Homepage</span>
+                          <span>About</span>
                       </a>
                   </li>
 

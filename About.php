@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -34,7 +35,7 @@
       $db = connect();
 if (! empty($_SESSION['login']))
 {
-    header('location:homepage.php');
+    header('location:About.php');
 }
 else
 {
@@ -56,7 +57,7 @@ else
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="homepage.php" class="logo"><b>Inventory System</b></a>
+            <a href="About.php" class="logo"><b>Inventory System</b></a>
             <!--logo end-->
 
 
@@ -81,9 +82,9 @@ else
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
-                      <a class="active" href="homepage.php">
+                      <a class="active" href="About.php">
                           <i class="fa fa-home"></i>
-                          <span>Homepage</span>
+                          <span>About</span>
                       </a>
                   </li>
 
@@ -136,7 +137,7 @@ else
                           <h1 class="brand-name front">Administrator</h1>
                           <hr style="width:100px;">
                           <small>By
-                        <strong>SJPIICD</strong>
+                        <strong>SJPIICD-ICT</strong>
                           </small>
                 </div>
 
@@ -155,9 +156,8 @@ else
 
 
                           <div class="col-lg-6 col-sm-6">
-                              <hr class="section-heading-spacer">
                               <h2 class="section-heading">The Digital Laboratory</h2>
-                              <p class="lead" style="font-size:18px;" align="justify">Located at the St. John Paul II College of Davao's 6th floor, the Digital Laboratory is used to enhance the skills and capabilities of the Engineering and Information Technology students in their electrical-related subjects such as EE51, ECE552, CpE403, and more.
+                              <p class="lead" align="justify">Located at the St. John Paul II College of Davao's 6th floor, the Digital Laboratory is used to enhance the skills and capabilities of the Engineering and Information Technology students in their electrical-related subjects such as EE51, ECE552, CpE403, and more.
                               </p>
                           </div>
                           <div class="col-lg-6  col-sm-6">
@@ -172,11 +172,7 @@ else
                       <div class="row mt">
                         <div class="content-section-b">
 
-
-
-
                 <div class="col-lg-6  col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
                     <h2 class="section-heading">Headed and supervised by<br> Engr. Jose Rhyz Ismael</h2>
                     <p class="lead" align="justify">The Digital Laboratory has several lists of equipment which could be borrowed by the students for free. This would be Engr. Ismael's helping hand in monitoring those equipment lend to the students. <br></br><br></br>
                     </p>
@@ -191,10 +187,6 @@ else
 
     </div>
         </div><!-- /row -->
-
-
-
-
 
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
 
@@ -214,7 +206,7 @@ else
                       	</div>
                       	<div class="details">
                       		<p><a href="#">Khuzan Omandac</a><br/>
-                      		   <muted>09124551675</muted>
+                      		   09124551675
                       		</p>
                       	</div>
                       </div>
@@ -225,7 +217,7 @@ else
                       	</div>
                       	<div class="details">
                       		<p><a href="#">Eman Imbod</a><br/>
-                      		   <muted>09302486876</muted>
+                      		   09302486876
                       		</p>
                       	</div>
                       </div>
@@ -236,7 +228,7 @@ else
                       	</div>
                       	<div class="details">
                       		<p><a href="#">jerlyn Jamora</a><br/>
-                      		   <muted>09350812957</muted>
+                      		   09350812957
                       		</p>
                       	</div>
                       </div>
@@ -274,23 +266,23 @@ else
     							<!-- WHITE PANEL - TOP USER -->
     							<div class="white-panel pn">
     								<div class="white-header">
-    									<h5><b>Technical Writer</b></h5>
+    									<h5><b>System Analyst</b></h5>
     								</div>
     								<p><img src="assets/img/jam.jpg" class="img-circle" width="80"></p>
     								<p><b>Jerlyn Jamora</b></p>
     								<div class="row">
     									<div class="col-md-12">
     										<p class="small mt">FOLLOW ME ON SOCIAL MEDIA</p>
-                        <a href="https://www.facebook.com/jerlyn.jamora" >
+                        <a href="https://www.facebook.com/jerlyn.jamora"  target="_blank">
                           <i class="fa fa-facebook space"></i>
                         </a>
-                        <a href="https://plus.google.com/u/0/114493656482019045804">
+                        <a href="https://plus.google.com/u/0/114493656482019045804" target="_blank">
                           <i class="fa fa-google space"></i>
                         </a>
-                        <a href="https://twitter.com/jerlynjamora">
+                        <a href="https://twitter.com/jerlynjamora" target="_blank">
                           <i class="fa fa-twitter space"></i>
                         </a>
-                        <a href="https://www.instagram.com/jajamjaaam/">
+                        <a href="https://www.instagram.com/jajamjaaam/" target="_blank">
                           <i class="fa fa-instagram space"></i>
                         </a>
     									</div>
@@ -308,20 +300,23 @@ else
     								<div class="row">
     									<div class="col-md-12">
     										<p class="small mt">FOLLOW ME ON SOCIAL MEDIA</p>
-                        <a href="https://www.facebook.com/khuzan91">
+                        <a href="https://www.facebook.com/khuzan91" target="_blank">
                           <i class="fa fa-facebook space" ></i>
                         </a>
-                        <a href="https://mail.google.com/mail/u/0/#inbox">
+                        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
                           <i class="fa fa-google space" ></i>
                         </a>
-                        <a href="https://github.com/khuzan">
+                        <a href="https://github.com/khuzan" target="_blank">
                           <i class="fa fa-github space"></i>
                         </a>
-                        <a href="https://www.instagram.com/khuzandot1/">
+                        <a href="https://www.instagram.com/khuzandot1/" target="_blank">
                           <i class="fa fa-instagram space"></i>
                         </a>
-                        <a href="https://twitter.com/khuzan557">
+                        <a href="https://twitter.com/khuzan557" target="_blank">
                           <i class="fa fa-twitter space"></i>
+                        </a>
+                        <a href="https://codepen.io/k6packslami-on/" target="_blank">
+                          <i class="fa fa-codepen"></i>
                         </a>
 
     									</div>
@@ -332,17 +327,17 @@ else
     							<!-- WHITE PANEL - TOP USER -->
     							<div class="white-panel pn">
     								<div class="white-header">
-    									<h5><b>System Analyst</b></h5>
+    									<h5><b>Technical Writer</b></h5>
     								</div>
     								<p><img src="assets/img/eman.jpg" class="img-circle" width="80"></p>
     								<p><b>Eman Imbod</b></p>
     								<div class="row">
     									<div class="col-md-12">
     										<p class="small mt">FOLLOW ME ON SOCIAL MEDIA</p>
-                        <a href="https://www.facebook.com/eman.imbod">
+                        <a href="https://www.facebook.com/eman.imbod" target="_blank">
                           <i class="fa fa-facebook space"></i>
                         </a>
-                        <a href="https://mail.google.com/mail/u/0/#inbox/15aabc1b6972c160">
+                        <a href="https://mail.google.com/mail/u/0/#inbox/15aabc1b6972c160" target="_blank">
                         <i class="fa fa-google"></i>
                       </a>
                         <i class="fa fa-twitter space"></i>
@@ -366,7 +361,7 @@ else
       <footer class="site-footer">
           <div class="text-center">
               2016-2017 khuzan.js
-              <a href="homepage.php#" class="go-top">
+              <a href="About.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

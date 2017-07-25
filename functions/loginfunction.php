@@ -1,5 +1,7 @@
+
 <?php
 	session_start();
+
 	include "function.php";
 	$db = connect();
 
@@ -18,7 +20,8 @@
 
 				$_SESSION['login']=$account->id;
 
-				header("Location:../homepage.php");
+				header("Location:../About.php");
+
 
    }
    else{

@@ -6,9 +6,9 @@ $db = connect();
 if(isset($_POST["M_view"])){
 
     $output = '';
-    $sql = "SELECT * FROM borrowed_items
-            INNER JOIN borrower ON borrowed_items.borrower_id = borrower.id
-            WHERE borrower.id = '".$_POST['M_view']."'";
+    $sql = "SELECT * FROM returned_data
+            INNER JOIN reserved_borrowers ON returned_data.borrower_id = reserved_borrowers.id
+            WHERE reserved_borrowers.id = '".$_POST['M_view']."'";
     $sth = $db->prepare($sql);
       $sth->execute();
       $res = $sth->fetch(PDO::FETCH_OBJ);
@@ -17,9 +17,9 @@ if(isset($_POST["M_view"])){
 $id = $_POST['M_view'];
 
 
-    $sql2 = "SELECT * FROM borrowed_items INNER JOIN items
-            ON items.items_id = borrowed_items.items_id WHERE
-           borrowed_items.borrower_id = '$id'";
+    $sql2 = "SELECT * FROM returned_data INNER JOIN items
+            ON items.items_id = returned_data.items_id WHERE
+           returned_data.borrower_id = '$id'";
     $sth2 = $db->prepare($sql2);
       $sth2->execute();
       $res2 = $sth2->fetchAll(PDO::FETCH_OBJ);
@@ -71,8 +71,8 @@ $id = $_POST['M_view'];
                     <td>'.$a->description.'</td>
                     <td>'.$a->dateoflend.'</td>
                     <td>'.$a->b_qty.'</td>
-                    <td>'.$res->status.'</td>
-                    <td>'.$res->dateofreturn.'</td>
+                    <td>'.$a->status.'</td>
+                    <td>'.$a->dateofreturn.'</td>
               </tr>';
             }
             // $output .=  '</table>
@@ -100,7 +100,8 @@ $id = $_POST['M_view'];
              <div class="alert alert-danger">
                   <strong style="font-size:25px;">NOTE!</strong> PLEASE <strong>PRINT</strong> THE INFORMATION OF <strong>BROKEN ITEMS</strong>.
              </div>
-         </div>';
+
+        </div>';
       echo $output;
 }
  ?>

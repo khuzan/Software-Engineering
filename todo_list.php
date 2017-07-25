@@ -46,7 +46,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="homepage.php" class="logo"><b>Inventory System</b></a>
+            <a href="About.php" class="logo"><b>Inventory System</b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -70,9 +70,9 @@
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
-                      <a href="homepage.php">
+                      <a href="About.php">
                           <i class="fa fa-home"></i>
-                          <span>Homepage</span>
+                          <span>About</span>
                       </a>
                   </li>
 
@@ -125,7 +125,7 @@
 	                	<div class="panel-heading">
 	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> Borrower List</h5>
 													</div>
-													<button title="Add student" name="add"  class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#Modaladd">Add Student</button>
+													<button title="Add student" name="add"  class="btn btn-primary btn-md pull-right rounded" data-toggle="modal" data-target="#Modaladd">Add Student</button>
 	                        <br>
 													<div class="input-group pull-left" id="borrower-search">
 															<input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
@@ -312,10 +312,10 @@
 									<div class="form-group">
 										<label for="exampleInputName3" class="col-sm-2 control-label">ID Number</label>
 										<div class="col-sm-10">
-											<input type="number" class="form-control input-size" id="exampleInputName3" maxlength="9" placeholder="20XX-XXXX" name="id" min="1" required>
+											<input type="number" class="form-control input-size" id="exampleInputName3" maxlength="8" placeholder="20XXXXXX" name="id" min="1" required>
 											<?php
 											if(isset($_GET['error2'])){
-												echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">Only Numbers Are Allowed!</p>";
+												echo "&nbsp;&nbsp;&nbsp;&nbsp;  <p style=\"color:red;\">ID must 8 integers! </p>";
 												echo "<br>";
 											}
 											?>
@@ -457,7 +457,15 @@
 			<!-- END UPDATE MODAL -->
 </html>
 <style media="screen">
+.rounded {
+	 -webkit-border-radius: 20px;
+	 -moz-border-radius: 20px;
+	 border-radius: 20px;
+}
+.rounded:hover{
 
+	box-shadow: 1px 2px 12px black;
+}
 	.task-css{
 		height: 500px;
 	}
@@ -480,8 +488,6 @@
 
 	.table-scroll thead > tr > th {
 	    border: none;
-	}*/
-
-	/*END table-scroll
-
+	}
+	/*END table-scroll*/
 </style>

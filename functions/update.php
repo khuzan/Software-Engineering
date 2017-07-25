@@ -9,7 +9,6 @@ if (isset($_POST['update'])) {
 	$name = $_POST['name'];
 	$course = $_POST['course'];
 	$subject = $_POST['subj'];
-	$date = $_POST['dateoflend'];
 	$status = $_POST['status'];
 	$datereturn = date('y/m/d');
 	$comments = $_POST['comment'];
@@ -20,10 +19,21 @@ if (isset($_POST['update'])) {
 if ($status == 'returned') {
 	foreach (getborroweditemsbyid($id) as $d) {
 		$r = getitemsbyid($d->items_id);
-		echo $iqty = $r->qty;
-		echo $iqty = $iqty + $d->b_qty;
+		$iqty = $r->qty;
+		$iqty = $iqty + $d->b_qty;
 		$query2 = $db->prepare("UPDATE items SET qty = '$iqty' WHERE items_id = '$d->items_id'");
+		$query3 = $db->prepare("UPDATE borrowed_items SET status = '$status' WHERE borrower_id = '$id'");
+		$query4 = $db->prepare("UPDATE borrowed_items SET dateofreturn = '$datereturn' WHERE borrower_id = '$id'");
+		$query5 = $db->prepare("DELETE FROM borrower WHERE id = '$id'");
+
+
 		$query2->execute();
+		$query3->execute();
+		$query4->execute();
+		$query5->execute();
+
+
+
 	}
 
 }
@@ -34,8 +44,6 @@ if ($status == 'returned') {
 	             WHERE id = :id ");
 
 			$query1 = $db->prepare("UPDATE borrowed_items SET
-							dateofreturn = :returned,
-							status = :status,
 							comments = :comments
 							WHERE b_id = :b_id");
 
@@ -44,13 +52,21 @@ if ($status == 'returned') {
 	  $query->bindValue('course',$course);
 	  $query->bindValue('subj',$subject);
 
-		$query1->bindValue('status',$status);
-		$query1->bindValue('returned',$datereturn);
 		$query1->bindValue('comments',$comments);
 		$query1->bindValue('b_id',$b_id);
 
 		$query->execute();
 		$query1->execute();
+
+		// copy data and delete from one table to another table/ --
+		$query3 = $db->prepare("INSERT INTO returned_data SELECT * FROM borrowed_items WHERE status = 'returned'");
+		$query4 = $db->prepare("DELETE FROM borrowed_items WHERE status = 'returned'");
+
+
+		$query3->execute();
+		$query4->execute();
+
+
 
 			echo ("<SCRIPT LANGUAGE='JavaScript'>
 	        window.alert('Succesfully Updated')

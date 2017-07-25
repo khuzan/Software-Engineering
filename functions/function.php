@@ -48,10 +48,19 @@
 	return $results;
 		}
 
-		function getreturned(){
+		function getnotreturned(){
 			$db = connect();
 		$sth = $db->prepare("SELECT * FROM borrowed_items
-            INNER JOIN borrower ON borrowed_items.borrower_id = borrower.id WHERE status = 'returned'");
+            INNER JOIN borrower ON borrowed_items.borrower_id = borrower.id WHERE status = 'not returned'");
+		$sth->execute();
+		$results = $sth->fetch(PDO::FETCH_OBJ);
+		return $results;
+		}
+
+		function getreturned(){
+			$db = connect();
+		$sth = $db->prepare("SELECT * FROM returned_data
+            INNER JOIN reserved_borrowers ON returned_data.borrower_id = reserved_borrowers.id WHERE status = 'returned'");
 		$sth->execute();
 		$results = $sth->fetchAll(PDO::FETCH_OBJ);
 		return $results;
@@ -79,15 +88,16 @@
 			return $results;
 		}
 
-		function studentexists($name){
+		function studentexists($name, $id){
  		$db = connect();
- 	$query = $db->prepare("SELECT * from borrower WHERE  name = ?");
+ 	$query = $db->prepare("SELECT * from borrower WHERE  name = ? AND id = ?");
  	$query->bindParam(1,$name);
+ 	$query->bindParam(2,$id);
  	$query->execute();
 	$results = $query->fetch(PDO::FETCH_OBJ);
 	return $results;
 }
-		
+
 		function getborroweritemsbyid($borrower_id){
  		$db = connect();
  	$query = $db->prepare("SELECT * from borrowed_items WHERE  borrower_id = ?");

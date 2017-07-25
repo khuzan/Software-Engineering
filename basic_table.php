@@ -6,9 +6,14 @@ $db = connect();
 
 if(isset($_GET['action']) && $_GET['action']=='delete'){
   $db = connect();
-  $sth = $db->prepare("DELETE FROM borrower WHERE id = :id");
+  $sth = $db->prepare("DELETE FROM reserved_borrowers WHERE id = :id");
+  $sth2 = $db->prepare("DELETE FROM returned_data WHERE b_id =:b_id");
+
   $sth->bindValue('id',$_GET['id']);
+  $sth2->bindValue('b_id',$_GET['id']);
+
   $sth->execute();
+  $sth2->execute();
   echo ("<SCRIPT LANGUAGE='JavaScript'>
       window.alert('Succesfully Updated')
       window.location.href='basic_table.php'
@@ -55,7 +60,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="homepage.php" class="logo"><b>Inventory System</b></a>
+            <a href="About.php" class="logo"><b>Inventory System</b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -79,9 +84,9 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
-                      <a href="homepage.php">
+                      <a href="About.php">
                           <i class="fa fa-home"></i>
-                          <span>Homepage</span>
+                          <span>About</span>
                       </a>
                   </li>
 
@@ -249,7 +254,7 @@ if(isset($_GET['action']) && $_GET['action']=='delete'){
                  if(id != '')
                  {
                       $.ajax({
-                           url:"functions/fetch_process.php",
+                           url:"functions/returned_data.php",
                            method:"POST",
                            data:{M_view:id},
                            success:function(data){

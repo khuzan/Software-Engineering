@@ -41,7 +41,7 @@
 			 $id = $r['id'];
 			$qty = $r['qty'];
 
-			 $dateoflend = date('y-d-m');
+			 $dateoflend = date('y/m/d');
 			$query = $db->prepare("INSERT INTO borrowed_items set borrower_id ='$s_id', items_id = '$id', dateoflend = '$dateoflend',
 				 										status = '$status', received = '$b_checked', b_qty = '$qty'");
 
@@ -56,7 +56,10 @@
 
 		$query1 = $db->prepare("INSERT INTO borrower set id = '$b_id', name = '$b_name', course = '$b_course',
 				subject = '$b_subject'");
+	  $query2 = $db->prepare("INSERT INTO reserved_borrowers set id = '$b_id', name = '$b_name', course = '$b_course',
+						subject = '$b_subject'");
 		$query1->execute();
+		$query2->execute();
 
 
 		if ($iqty == 0 && $iqty < $qty) {

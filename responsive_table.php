@@ -44,7 +44,7 @@ $db = connect();
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="homepage.php" class="logo"><b>Inventory System</b></a>
+            <a href="About.php" class="logo"><b>Inventory System</b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -68,9 +68,9 @@ $db = connect();
               	  <h5 class="centered">JOSE RHYZ ISMAEL</h5>
 
                   <li class="mt">
-                      <a href="homepage.php">
+                      <a href="About.php">
                           <i class="fa fa-home"></i>
-                          <span>Homepage</span>
+                          <span>About</span>
                       </a>
                   </li>
 
