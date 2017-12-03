@@ -44,6 +44,7 @@ if ($status == 'returned') {
 	             WHERE id = :id ");
 
 			$query1 = $db->prepare("UPDATE borrowed_items SET
+							dateofreturn = :returned,
 							comments = :comments
 							WHERE b_id = :b_id");
 
@@ -52,6 +53,7 @@ if ($status == 'returned') {
 	  $query->bindValue('course',$course);
 	  $query->bindValue('subj',$subject);
 
+		$query1->bindValue('returned',$datereturn);
 		$query1->bindValue('comments',$comments);
 		$query1->bindValue('b_id',$b_id);
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2017 at 03:06 PM
+-- Generation Time: Jul 25, 2017 at 08:24 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -37,43 +37,22 @@ CREATE TABLE IF NOT EXISTS `borrowed_items` (
   `received` varchar(500) NOT NULL,
   `b_qty` int(11) NOT NULL,
   PRIMARY KEY (`b_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=177 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=66 ;
 
 --
 -- Dumping data for table `borrowed_items`
 --
 
 INSERT INTO `borrowed_items` (`b_id`, `borrower_id`, `items_id`, `dateoflend`, `dateofreturn`, `status`, `comments`, `received`, `b_qty`) VALUES
-(145, 1374, 1, '17-23-03', '17/03/23', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 2),
-(146, 1374, 4, '17-23-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 2),
-(147, 1375, 13, '17-23-03', '17/03/23', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
-(148, 1375, 16, '17-23-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
-(149, 1375, 17, '17-23-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
-(150, 1374, 1, '17-23-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(151, 1374, 1, '17-23-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(152, 2115, 1, '17-23-03', '17/03/24', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 4),
-(153, 989, 1, '17-23-03', '17/03/23', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(154, 1255, 2, '17-23-03', '17/03/23', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(155, 88182, 1, '17-24-03', '17/03/24', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(156, 88182, 2, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(157, 213123123, 1, '17-24-03', '17/04/14', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
-(158, 213123123, 2, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 10),
-(159, 23423423, 2, '17-24-03', '17/03/24', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(162, 223232323, 1, '17-24-03', '17/03/24', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 2),
-(163, 223232323, 3, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
-(164, 212121, 1, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(165, 20140429, 1, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(166, 20140429, 3, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(167, 20140606, 1, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(168, 20140606, 3, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
-(169, 20140606, 26, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(170, 1666, 1, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
-(171, 1666, 4, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
-(172, 12355, 3, '17-24-03', '17/03/24', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 3),
-(173, 145, 2, '17-24-03', '17/04/16', 'not returned', 'helo', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(174, 145, 15, '17-24-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(175, 9999, 4, '17-26-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
-(176, 9999, 14, '17-26-03', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1);
+(39, 20141111, 1, '17-12-07', '17/07/12', 'not returned', 'Deym!', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(49, 20141375, 2, '17-12-07', '17/07/12', 'not returned', 'Deym girl!', 'ENGR. JOSE RHYZ ISMAEL', 7),
+(50, 20141374, 2, '17-12-07', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
+(51, 20141990, 2, '17-12-07', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
+(52, 20141990, 3, '17-12-07', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 3),
+(53, 20140069, 2, '17-12-07', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(55, 20140001, 2, '17-12-07', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(64, 20140202, 1, '17/07/13', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(65, 20140202, 3, '17/07/13', '', 'not returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1);
 
 -- --------------------------------------------------------
 
@@ -87,23 +66,20 @@ CREATE TABLE IF NOT EXISTS `borrower` (
   `course` varchar(50) NOT NULL,
   `subject` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=223232324 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20141991 ;
 
 --
 -- Dumping data for table `borrower`
 --
 
 INSERT INTO `borrower` (`id`, `name`, `course`, `subject`) VALUES
-(145, 'MYLEN', 'BS INFORMATION TECHNOLOGY - I', 'ECE552'),
-(1374, 'ZEN', 'BS INFORMATION TECHNOLOGY - I', 'ECE552'),
-(1666, 'OMANDAC', 'BS ENGINEERING - II', 'CA211'),
-(9999, 'BLACK', 'BS INFORMATION TECHNOLOGY - I', 'EE51'),
-(12355, 'MORENO', 'BS ENGINEERING - I', 'CPE402'),
-(212121, 'DENIS', 'BS INFORMATION TECHNOLOGY - I', 'EE51'),
-(20140429, 'JERLYN JAMORA', 'BS INFORMATION TECHNOLOGY - III', 'CA211'),
-(20140606, 'VINA VELARDE', 'BS INFORMATION TECHNOLOGY - III', 'EE51'),
-(213123123, 'SANZ', 'BS INFORMATION TECHNOLOGY - I', 'EE51'),
-(223232323, 'DENIS', 'BS INFORMATION TECHNOLOGY - I', 'EE51');
+(20140001, 'DENNIS ZYRUS', 'BS INFORMATION TECHNOLOGY - II', 'EE51'),
+(20140069, 'ZEKEY ZAILON', 'BS INFORMATION TECHNOLOGY - IV', 'CA211'),
+(20140202, 'OZAWA ', 'BS ENGINEERING - I', 'EE51'),
+(20141111, 'BLACK', 'BS INFORMATION TECHNOLOGY - II', 'EE51'),
+(20141374, 'KHUZAN', 'BS INFORMATION TECHNOLOGY - IV', 'EE51'),
+(20141375, 'JADE ASIS', 'BS ENGINEERING - IV', 'ECE552'),
+(20141990, 'KUYA SANZ', 'BS INFORMATION TECHNOLOGY - IV', 'CA211');
 
 -- --------------------------------------------------------
 
@@ -122,20 +98,20 @@ CREATE TABLE IF NOT EXISTS `items` (
   `assignee` varchar(50) NOT NULL,
   `remarks` varchar(50) NOT NULL,
   PRIMARY KEY (`items_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
 
 --
 -- Dumping data for table `items`
 --
 
 INSERT INTO `items` (`items_id`, `qty`, `description`, `prpty_number`, `classification`, `department`, `location`, `assignee`, `remarks`) VALUES
-(1, 17, 'Analog-Digital Communication Trainer', '04-ED-001,04-ED-0140-0151', 'ENG''G-DIGITAL LAB EQPT', 'ENG''G', 'Digital Lab', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition'),
-(2, 29, '0-15 VOLTS POWER SUPPLY', '04-ED-0002-0006', 'ENG''G-DIGITAL LAB EQPT', 'ENG''G', 'Digital Lab', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition'),
-(3, 3, 'CAMSCO MOTOR STARTER', '04-ED-0015', 'ENG''G-DIGITAL LAB EQPT', 'ENG''G', 'Digital Lab', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition'),
-(4, 4, 'ANTENNA SYSTEM', '04-ED-0120', 'ENG''G-DIGITAL LAB EQPT', 'ENG''G', 'Digital Lab', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition'),
+(1, 0, 'Analog-Digital Communication Trainer', '04-ED-001,04-ED-0140-0151', 'ENG''G-DIGITAL LAB EQPT', 'ENG''G', 'Digital Lab', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition'),
+(2, 12, '0-15 VOLTS POWER SUPPLY', '04-ED-0002-0006', 'ENG''G-DIGITAL LAB EQPT', 'ENG''G', 'Digital Lab', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition'),
+(3, 5, 'CAMSCO MOTOR STARTER', '04-ED-0015', 'ENG''G-DIGITAL LAB EQPT', 'ENG''G', 'Digital Lab', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition'),
+(4, 6, 'ANTENNA SYSTEM', '04-ED-0120', 'ENG''G-DIGITAL LAB EQPT', 'ENG''G', 'Digital Lab', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition'),
 (13, 10, '0-15 VOLTS POWER SUPPLY', '04-ED-0002-0006', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Operational'),
 (14, 9, 'CAMSCO MOTOR STARTER', '04-ED-0007', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Operational'),
-(15, 9, 'ANTENNA SYSTEM', '04-ED-0015', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Operational'),
+(15, 15, 'ANTENNA SYSTEM', '04-ED-0015', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Operational'),
 (16, 10, 'BREADBOARD', '04-ED-0120', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Operational'),
 (17, 10, 'CONVERTER CHARGER ( KOLIN )', '04-ED-0017', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Operational'),
 (18, 10, 'DESOLDERING PUMP', '04-ED-0018-0019', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Operational'),
@@ -170,7 +146,8 @@ INSERT INTO `items` (`items_id`, `qty`, `description`, `prpty_number`, `classifi
 (47, 10, 'IRON FILINGS', '04-EP-0084', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Operational'),
 (48, 10, 'TAPE MEASURE', '04-EP-0140-0143', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Not Operational'),
 (49, 10, 'THERMOMETER', '04-EP-0144-0145', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Not Operational'),
-(52, 11, 'ANTENNA SYSTEM', '04-ED-0007', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition');
+(52, 11, 'ANTENNA SYSTEM', '04-ED-0007', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition'),
+(53, 5, 'arduino uno', '1234', 'ENGINEERING-DIGITAL LAB EQPT', 'ENGINEERING', 'Digital Laboratory', 'ENGR. JOSE RHYZ ISMAEL', 'Good Condition');
 
 -- --------------------------------------------------------
 
@@ -190,7 +167,75 @@ CREATE TABLE IF NOT EXISTS `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'zen');
+(1, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reserved_borrowers`
+--
+
+CREATE TABLE IF NOT EXISTS `reserved_borrowers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `course` varchar(50) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20150000 ;
+
+--
+-- Dumping data for table `reserved_borrowers`
+--
+
+INSERT INTO `reserved_borrowers` (`id`, `name`, `course`, `subject`) VALUES
+(20140001, 'DENNIS ZYRUS', 'BS INFORMATION TECHNOLOGY - II', 'EE51'),
+(20140069, 'ZEKEY ZAILON', 'BS INFORMATION TECHNOLOGY - IV', 'CA211'),
+(20140202, 'OZAWA ', 'BS ENGINEERING - I', 'EE51'),
+(20141111, 'BLACK', 'BS INFORMATION TECHNOLOGY - II', 'EE51'),
+(20141234, 'AMBOT', 'BS ENGINEERING - I', 'CPE403'),
+(20141374, 'KHUZAN', 'BS INFORMATION TECHNOLOGY - IV', 'EE51'),
+(20141375, 'JADE ASIS', 'BS INFORMATION TECHNOLOGY - I', 'EE51'),
+(20141577, 'WILSON', 'BS INFORMATION TECHNOLOGY - IV', 'CPE403'),
+(20141990, 'KUYA SANZ', 'BS INFORMATION TECHNOLOGY - IV', 'CA211'),
+(20145577, 'MIA KHALIFA', 'BS ENGINEERING - II', 'ECE552'),
+(20149999, 'MYLEN', 'BS INFORMATION TECHNOLOGY - III', 'EE51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `returned_data`
+--
+
+CREATE TABLE IF NOT EXISTS `returned_data` (
+  `b_id` int(11) NOT NULL AUTO_INCREMENT,
+  `borrower_id` int(11) NOT NULL,
+  `items_id` int(11) NOT NULL,
+  `dateoflend` varchar(50) NOT NULL,
+  `dateofreturn` varchar(50) NOT NULL,
+  `status` varchar(200) NOT NULL,
+  `comments` varchar(500) NOT NULL,
+  `received` varchar(500) NOT NULL,
+  `b_qty` int(11) NOT NULL,
+  PRIMARY KEY (`b_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
+
+--
+-- Dumping data for table `returned_data`
+--
+
+INSERT INTO `returned_data` (`b_id`, `borrower_id`, `items_id`, `dateoflend`, `dateofreturn`, `status`, `comments`, `received`, `b_qty`) VALUES
+(42, 20141375, 1, '17-12-07', '17/07/12', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(43, 20141375, 2, '17-12-07', '', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 2),
+(54, 20141577, 2, '17-12-07', '17/07/13', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(56, 20145577, 2, '17-12-07', '17/07/13', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(57, 20149999, 2, '17-12-07', '17/07/12', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 3),
+(59, 20149999, 1, '17-13-07', '17/07/13', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(60, 20149999, 3, '17-13-07', '', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 5),
+(61, 20149999, 3, '17-13-07', '17/07/13', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 2),
+(62, 20149999, 2, '17-13-07', '17/07/13', 'returned', 'hello', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(63, 20149999, 4, '17-13-07', '17/07/13', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 2),
+(67, 20141234, 16, '17/07/13', '17/07/13', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1),
+(68, 20141234, 19, '17/07/13', '17/07/13', 'returned', '', 'ENGR. JOSE RHYZ ISMAEL', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

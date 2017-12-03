@@ -7,7 +7,7 @@ $db = connect();
 if(isset($_GET['action']) && $_GET['action']=='delete'){
   $db = connect();
   $sth = $db->prepare("DELETE FROM reserved_borrowers WHERE id = :id");
-  $sth2 = $db->prepare("DELETE FROM returned_data WHERE b_id =:b_id");
+  $sth2 = $db->prepare("DELETE FROM returned_data WHERE borrower_id =:b_id");
 
   $sth->bindValue('id',$_GET['id']);
   $sth2->bindValue('b_id',$_GET['id']);
