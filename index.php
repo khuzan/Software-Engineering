@@ -51,7 +51,7 @@
                     ?>
 		            </label>
 		            <button class="btn btn-theme btn-block"  name="submit"  type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
-		            <hr>
+
 
 		        </div>
 

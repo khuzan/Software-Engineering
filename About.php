@@ -296,7 +296,7 @@ else
     									<h5><b>Project Leader/Programmer</b></h5>
     								</div>
     								<p><img src="assets/img/PROFILE PIC.jpg" class="img-circle" width="80"></p>
-    								<p><b>Khuzan Omandac</b></p>
+    								<p><b>Aljon Mar Omandac</b></p>
     								<div class="row">
     									<div class="col-md-12">
     										<p class="small mt">FOLLOW ME ON SOCIAL MEDIA</p>

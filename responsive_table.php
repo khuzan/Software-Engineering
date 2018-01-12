@@ -139,6 +139,7 @@ $db = connect();
                       							<th>LOCATION</th>
                       							<th>ASSIGNEE</th>
                       							<th>REMARKS</th>
+                      							<th>Update</th>
   	                              </tr>
   	                              </thead>
   	                              <tbody>
@@ -152,6 +153,9 @@ $db = connect();
                                     <td><?php echo $d->location; ?></td>
                                     <td><?php echo $d->assignee; ?></td>
                                     <td><?php echo $d->remarks; ?></td>
+                                    <td>
+                                      <button title="edit" data-id="<?php echo $d->items_id;?>" class="btn btn-success btn-sm update glyphicon glyphicon-edit" data-toggle="modal" data-target="#updateModal"></button>
+                                    </td>
   	                              </tr>
                                 <?php endforeach; ?>
   	                            </tbody>
@@ -318,8 +322,39 @@ $db = connect();
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
 
+
+    <!-- UPDATE MODAL -->
+		<div class="modal fade" id="updateModal" role="dialog">
+		    <div class="modal-dialog modal-md">
+					<form class="" action="functions/update.php" method="post">
+
+
+		      <!-- Modal content-->
+		      <div class="modal-content form-group" >
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title" align="center">Update Details</h4>
+		        </div>
+		        <div class="modal-body" id="updatemodalview">
+		          <p id = "test" align="center">Some text in the modal.</p>
+							HELLO
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary" name="update_items">Save Changes</button>
+						</form>
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
+
+			<!-- END UPDATE MODAL -->
+
     <!--script for this page-->
     <script type="text/javascript">
+
+
     //  start print
     function printdiv(printpage)
 {
@@ -352,6 +387,25 @@ if (td) {
 }
 }
 }
+// end Search
+//modal update script
+$(document).on('click', '.update', function(){
+           var id = $(this).data("id");
+
+           if(id != '')
+           {
+                $.ajax({
+                     url:"functions/update_items.php",
+                     method:"POST",
+                     data:{update:id},
+                     success:function(data){
+                          $('#updatemodalview').html(data);
+                          $('#updateModal').modal('show');
+                     }
+                });
+           }
+      });
+// end update script
     </script>
 
   </body>

@@ -77,4 +77,33 @@ if ($status == 'returned') {
 
 	}
 
+
+// UPDATE ITEMS
+	if (isset($_POST['update_items'])) {
+		$id  = $_POST['items_id'];
+		$descz = $_POST['desc'];
+		$qty 	= $_POST['qty'];
+		$remarks = $_POST['remarks'];
+
+		$sql = $db->prepare("UPDATE items SET
+						description = :descz,
+						qty 				= :qty,
+						remarks			= :rem
+						WHERE items_id = :items_id");
+
+		$sql->bindValue('items_id',$id);
+		$sql->bindValue('descz',$descz);
+		$sql->bindValue('qty',$qty);
+		$sql->bindValue('rem',$remarks);
+
+
+		$sql->execute();
+
+		echo ("<SCRIPT LANGUAGE='JavaScript'>
+				window.alert('Succesfully Updated')
+				window.location.href='../responsive_table.php'
+				</SCRIPT>");
+		# code...
+	}
+
 ?>
